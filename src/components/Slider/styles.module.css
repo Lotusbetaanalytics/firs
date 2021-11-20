@@ -1,0 +1,13 @@
+.slider {
+    width: 100%;
+    height: 1.5rem;
+    background: whitesmoke;
+    border-radius: 10px;
+    margin-bottom: 1rem;
+}
+
+.indicator {
+    height: 1.5rem;
+    background: #28A745;
+    border-radius: 10px;
+}

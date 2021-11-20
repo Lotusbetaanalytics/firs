@@ -1,0 +1,166 @@
+.app {
+    width: 100%;
+    height: 100vh;
+    background: url('../../assets/bg.jpg');
+    background-size: cover;
+    padding: 2rem;
+}
+
+.logo {
+    width: 100%;
+    height: 10rem;
+    overflow: hidden;
+}
+
+.logo img {
+    width: 5%;
+}
+
+.loginContainer {
+    width: 40%;
+    height: auto;
+    display: block;
+    padding: 1rem;
+    margin: 0 auto;
+}
+
+.inputContainer {
+    width: 100%;
+    height: auto;
+    display: block;
+    padding: .5rem;
+}
+
+.inputContainer input {
+    padding: 1rem;
+}
+
+.inputContainer input[type="email"],
+[type="password"] {
+    border-radius: 0;
+    border: none;
+    border-bottom: 1px solid forestgreen;
+}
+
+.contents {
+    width: 87%;
+    height: auto;
+    display: block;
+    margin-left: 13%;
+    float: left;
+
+}
+
+.overlay {
+    width: 100%;
+    height: auto;
+    display: block;
+    padding: 1rem;
+    background: linear-gradient(90deg, rgba(57, 204, 149), rgba(58, 205, 198));
+
+}
+
+.cardContainer {
+    width: 100%;
+    height: auto;
+}
+
+.cardGrid {
+    display: grid;
+    grid-template-columns: 23% 23% 23% 23%;
+    grid-gap: 2%;
+}
+
+.purple {
+    background: #F2EBFB;
+    color: #713BDB;
+}
+
+.cyan {
+    background: #EEF9FF;
+    color: #49B8FF;
+}
+
+.gold {
+    background: #FEF3EF;
+    color: #FE8A57;
+}
+
+.red {
+    background: #FFEFF2;
+    color: #FD5181;
+}
+
+.title {
+    width: 100%;
+    height: 3rem;
+    color: white;
+}
+
+.guestContainer {
+    width: 100%;
+    height: auto;
+    display: block;
+    padding: 5rem;
+}
+
+.guestGrid {
+    display: grid;
+    grid-template-columns: 30% 70%;
+}
+
+.guestCard {
+    width: 100%;
+    height: auto;
+    display: block;
+    padding: 2rem;
+}
+
+.guestCard h2 {
+    font-size: 15px;
+}
+
+
+.titleCard {
+    width: 100%;
+    height: 3rem;
+    display: block;
+    padding: 1rem .5rem;
+    background: white;
+    margin-bottom: 1rem;
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+    border-radius: 5px;
+}
+
+.guestCard p {
+    font-size: 14px;
+}
+
+.guestCard img {
+    border-radius: 50%;
+}
+
+.whiteBtn {
+    padding: 1rem 2rem;
+    background: whitesmoke;
+    color: black;
+    font-size: 12px;
+    border-radius: 5px;
+
+}
+
+.rows {
+    display: grid;
+    grid-template-columns: 48% 48%;
+    grid-gap: 2%;
+}
+
+.rows input {
+    padding: 1rem 2rem;
+    border: 1px solid gainsboro;
+}
+
+.rows select {
+    padding: 1rem 2rem;
+    border: 1px solid gainsboro;
+}

@@ -1,0 +1,51 @@
+.hcard {
+    width: 100%;
+    height: 8rem;
+    background: white;
+    box-shadow: 0px 1px 2px -1px rgba(0, 0, 0, 0.02);
+    border-radius: 300px;
+    padding: 1rem;
+    margin-bottom: 1rem;
+}
+
+.hlgrid {
+    display: grid;
+    grid-template-columns: 30% 70%;
+}
+
+.icons {
+    width: 100%;
+    height: 6rem;
+    padding: .5rem;
+    text-align: center;
+}
+
+.square i {
+    font-size: 30px;
+    text-align: center;
+}
+
+.text {
+    width: 100%;
+    height: 6rem;
+    padding: 1rem;
+}
+
+.square {
+    width: 80px;
+    height: 80px;
+    border-radius: 5px;
+    padding: 1.3rem .5rem;
+    border-radius: 50%;
+    text-align: center;
+
+}
+
+.text p {
+    font-size: 15px;
+}
+
+.text h1 {
+    font-size: 30px;
+    color: black;
+}
