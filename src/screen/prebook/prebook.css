@@ -1,0 +1,33 @@
+.Prebook__container {
+  display: flex;
+  width: 95vw;
+  overflow: hidden;
+}
+
+.prebook__navbar {
+  position: fixed;
+  width: 15vw;
+  height: 100vh;
+  border: 1px solid red;
+}
+
+.heading__form {
+  margin-left: 150px;
+}
+
+.prebook__pagetitle {
+  margin-left: 100px;
+  width: 80%;
+  height: 10vh;
+  border: 1px solid blue;
+}
+
+.inputfields {
+  display: grid;
+  grid-template-columns: auto auto;
+  grid-gap: 40px;
+  padding: 20px;
+  width: 100%;
+  margin: 100px;
+  width: 70vw;
+}
