@@ -1,0 +1,19 @@
+.header {
+    width: 100%;
+    min-height: 6rem;
+    height: auto;
+    display: block;
+    padding: 1rem 5rem;
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+}
+
+.logo {
+    width: 50%;
+    height: 5rem;
+    overflow: hidden;
+    float: left;
+}
+
+.logo img {
+    width: 40%;
+}
