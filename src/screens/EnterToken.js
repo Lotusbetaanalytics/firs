@@ -33,7 +33,7 @@ function EnterToken() {
             isLoading
             loadingText="Submitting Data..."
           >
-            Enter
+            Submit Token
           </button>
         </form>
       </div>

@@ -14,7 +14,7 @@ function HomePage() {
         <div className={styles.welcomeQuote}>
           <h1>Welcome</h1>
           <h3>
-            Connect to the FIRS to get better Understanding on your tax rates,
+            Connect to the FIRS to get better understanding on your tax rates,
             pay your taxes and visit our webistes for more information.
           </h3>
           <div className={styles.btnContainer}>
