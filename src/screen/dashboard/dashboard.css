@@ -36,3 +36,21 @@
   width: 35%;
   margin: 0 auto;
 }
+
+@media screen and (max-width: 768px) {
+  .dashboard__container .chart {
+    display: none;
+  }
+
+  .cards {
+    display: grid;
+    grid-template-columns: auto;
+    grid-gap: 10px;
+    padding: 10px;
+    width: 100%;
+  }
+
+  .dashboard__container {
+    margin-left: 60px;
+  }
+}

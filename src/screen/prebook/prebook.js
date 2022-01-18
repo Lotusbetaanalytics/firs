@@ -2,23 +2,34 @@ import React from "react";
 import { TextField, Button } from "@material-ui/core";
 import { FaCaretRight } from "react-icons/fa";
 import PageTitle from "../../components/PageTitle/Pagetitle";
+import Navbar from "../../components/Navbar/Navbar";
 import "./prebook.css";
 
 const Prebook = () => {
   return (
     <div className="Prebook__container">
-      <div className="prebook__navbar"></div>
+      <div className="prebook__navbar">
+        <Navbar />
+      </div>
       <div className="heading__form">
         <div className="prebook__pagetitle">
           <PageTitle heading="Prebook a Guest" />
         </div>
         <form className="inputfields" noValidate autoComplete="off">
-          <TextField id="outlined-basic" label="Name" variant="outlined" />
-          <TextField id="outlined-basic" label="Company" variant="outlined" />
+          <TextField
+            id="outlined-basic"
+            label="Guest Name"
+            variant="outlined"
+          />
+          <TextField
+            id="outlined-basic"
+            label="Purpose of visit"
+            variant="outlined"
+          />
           <TextField
             id="outlined-basic"
             type="email"
-            label="Email"
+            label="Guest Email"
             variant="outlined"
           />
           <TextField id="outlined-basic" label="Mobile" variant="outlined" />
@@ -28,7 +39,7 @@ const Prebook = () => {
           <Button
             variant="contained"
             color="primary"
-            startIcon={<FaCaretRight />}
+            endIcon={<FaCaretRight />}
           >
             Prebook Guest
           </Button>

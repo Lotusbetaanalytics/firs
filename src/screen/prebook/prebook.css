@@ -1,14 +1,8 @@
 .Prebook__container {
   display: flex;
   width: 95vw;
-  overflow: hidden;
-}
-
-.prebook__navbar {
-  position: fixed;
-  width: 15vw;
   height: 100vh;
-  border: 1px solid red;
+  overflow: hidden;
 }
 
 .heading__form {
@@ -30,4 +24,36 @@
   width: 100%;
   margin: 100px;
   width: 70vw;
+}
+
+.date__time {
+  display: flex;
+  flex-direction: column;
+}
+
+@media screen and (max-width: 768px) {
+  .Prebook__container {
+    display: flex;
+    width: 95vw;
+    height: 100vh;
+    overflow: scroll;
+    margin: 0 auto;
+  }
+
+  .prebook__pagetitle {
+    margin-left: 18px;
+    width: 85%;
+  }
+
+  .inputfields {
+    display: grid;
+    grid-template-columns: auto;
+    grid-gap: 40px;
+    padding: 20px;
+    width: 100%;
+    margin: 0px;
+  }
+  .heading__form {
+    margin: 0 auto;
+  }
 }
