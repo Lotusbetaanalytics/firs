@@ -16,33 +16,64 @@ const Prebook = () => {
           <PageTitle heading="Prebook a Guest" />
         </div>
         <form className="inputfields" noValidate autoComplete="off">
-          <TextField
-            id="outlined-basic"
-            label="Guest Name"
-            variant="outlined"
-          />
-          <TextField
-            id="outlined-basic"
-            label="Purpose of visit"
-            variant="outlined"
-          />
-          <TextField
-            id="outlined-basic"
-            type="email"
-            label="Guest Email"
-            variant="outlined"
-          />
-          <TextField id="outlined-basic" label="Mobile" variant="outlined" />
-          <TextField id="outlined-basic" label="Host" variant="outlined" />
-          <TextField type="date" variant="outlined" />
-          <TextField variant="outlined" id="time" type="time" />
-          <Button
-            variant="contained"
-            color="primary"
-            endIcon={<FaCaretRight />}
-          >
-            Prebook Guest
-          </Button>
+          <div className="date__time">
+            <label htmlFor="name">Guest Name</label>
+            <TextField
+              id="name"
+              // label="Guest Name"
+              placeholder="Guest Name"
+              variant="outlined"
+              type="text"
+            />
+          </div>
+          <div className="date__time">
+            <label htmlFor="visit">Purpose of Visit</label>
+            <TextField
+              id="visit"
+              placeholder="Purpose of visit"
+              variant="outlined"
+              type="text"
+            />
+          </div>
+          <div className="date__time">
+            <label htmlFor="email">Guest Email</label>
+            <TextField
+              id="email"
+              type="email"
+              placeholder="Guest Email"
+              variant="outlined"
+            />
+          </div>
+          <div className="date__time">
+            <label htmlFor="host">Guest Mobile</label>
+            <TextField
+              id="mobile"
+              placeholder="Guest Mobile"
+              variant="outlined"
+            />
+          </div>
+          <div className="date__time">
+            <label htmlFor="host">Host</label>
+            <TextField id="host" placeholder="Host" variant="outlined" />
+          </div>
+          <div className="date__time">
+            <label htmlFor="date">Expected Date</label>
+            <TextField type="date" id="date" variant="outlined" />
+          </div>
+
+          <div className="date__time">
+            <label htmlFor="time">Expected Time</label>
+            <TextField variant="outlined" id="time" type="time" />
+          </div>
+          <div className="date__time">
+            <Button
+              variant="contained"
+              color="primary"
+              endIcon={<FaCaretRight />}
+            >
+              Prebook Guest
+            </Button>
+          </div>
         </form>
       </div>
     </div>

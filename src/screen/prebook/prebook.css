@@ -10,7 +10,7 @@
 }
 
 .prebook__pagetitle {
-  margin-left: 100px;
+  margin: 0 auto;
   width: 80%;
   height: 10vh;
   border: 1px solid blue;
@@ -19,16 +19,21 @@
 .inputfields {
   display: grid;
   grid-template-columns: auto auto;
-  grid-gap: 40px;
+  grid-gap: 30px;
   padding: 20px;
-  width: 100%;
-  margin: 100px;
+  margin: 80px;
   width: 70vw;
 }
 
 .date__time {
   display: flex;
   flex-direction: column;
+  height: 80px;
+}
+.date__time button {
+  margin-top: 22px;
+  padding-top: 17px;
+  padding-bottom: 17px;
 }
 
 @media screen and (max-width: 768px) {
@@ -55,5 +60,23 @@
   }
   .heading__form {
     margin: 0 auto;
+  }
+}
+
+@media screen and (max-width: 900px) {
+  .inputfields {
+    display: grid;
+    grid-template-columns: auto;
+    grid-gap: 30px;
+    padding: 20px;
+    margin: 80px;
+    width: 60vw;
+  }
+
+  .prebook__pagetitle {
+    margin-left: 100px;
+    width: 60%;
+    height: 10vh;
+    border: 1px solid blue;
   }
 }
