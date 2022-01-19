@@ -19,13 +19,13 @@ function Header() {
                 </ul>
                 {user? (
                     <div className={styles.name}>
-                        <p>{data}</p>
+                        <p>welcome {data}</p>
                     </div>
-                ) : ( 
-                    <ul>
-                        <li className={styles.green}>Staff Login</li>
-                            <li className={styles.whiteBG}>Admin Login</li>
-                    </ul>
+                ) : ( <div className={styles.navContainer}>
+                    <div className={`${styles.whiteBG} ${styles.navBtn}`}>Staff Login</div>
+                    <div className={`${styles.green} ${styles.navBtn}`}>Admin Login</div>
+                </div>
+                        
                     )  }
                         
             </div>
