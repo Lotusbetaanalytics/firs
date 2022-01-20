@@ -1,6 +1,6 @@
 import React from "react";
 import Header from "./component/Header";
-import { Router, Routes } from "react-router-dom";
+import { Routes } from "react-router-dom";
 import { Route } from "react-router-dom";
 import { BrowserRouter } from "react-router-dom";
 import Login from "./screen/login";

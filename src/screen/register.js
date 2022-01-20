@@ -1,15 +1,16 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { Link, useNavigate } from "react-router-dom";
 
 import styles from "./styles.module.css";
 import { Alert, AlertIcon, useToast, Button } from "@chakra-ui/react";
 import { useState } from 'react';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
+import { ADMIN_REGISTRATION_RESET } from '../redux/constants_/adminConstants';
 
 
 const Register = () => {
-    const Dispatch = useDispatch()
-    // const toast = useToast();
+  const navigate = useNavigate();
+  const toast = useToast();
   const dispatch = useDispatch();
   const [firstName, setFirstName] = useState("");
   const [lastName, setLastName] = useState("");
@@ -18,20 +19,83 @@ const Register = () => {
   const [floor, setFloor] = useState("");
   const [office, setOffice] = useState("");
   const [email, setEmail] = useState("");
+  const [phone, setPhone] = useState("");
   const [password, setPassword] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");
   const [msg, setMsg] = useState(false);
-  const loading = false
+  const [pmsg, setPMsg] = useState(false);
+
+  const adminLogin = useSelector((state) => state.adminLogin);
+  const { adminInfo } = adminLogin;
+
+  const adminRegister = useSelector((state) => state.adminRegister);
+  const { loading, error, success } = adminRegister;
 
   const registerHandler = (e) => {
     e.preventDefault();
-    if (!email || !password) {
+    setPMsg(false);
+    if (
+      !firstName ||
+      !lastName ||
+      !role ||
+      !department ||
+      !floor ||
+      !office ||
+      !email ||
+      !phone ||
+      !password ||
+      !confirmPassword
+    ) {
       setMsg(true);
     } else {
       setMsg(false);
-      dispatch((email, password));
+      if (password === confirmPassword) {
+        dispatch(
+          adminRegister(
+            firstName,
+            lastName,
+            role,
+            department,
+            floor,
+            office,
+            email,
+            password
+          )
+        );
+      } else {
+        setPMsg(true);
+      }
     }
   };
+
+  if (error) {
+    toast({
+      title: "Error",
+      description: error,
+      status: "error",
+      duration: 9000,
+      isClosable: true,
+    });
+    dispatch({ type: ADMIN_REGISTRATION_RESET });
+  }
+
+  if (success) {
+    toast({
+      title: "Success",
+      description: "User Registration Successful",
+      status: "success",
+      duration: 9000,
+      isClosable: true,
+    });
+    dispatch({ type: ADMIN_REGISTRATION_RESET });
+    navigate("/login");
+  }
+
+  useEffect(() => {
+    if (adminInfo) {
+      navigate("/dashboard");
+    }
+  }, [adminInfo, navigate]);
 
     return (
         <div className={styles.customPadding_}>
@@ -40,6 +104,12 @@ const Register = () => {
             <Alert status="warning">
               <AlertIcon />
               All Fields are Required!
+            </Alert>
+          )}
+          {pmsg && (
+            <Alert status="error">
+              <AlertIcon />
+              Password does not match
             </Alert>
           )}
           <form onSubmit={registerHandler} className={styles.form2}>
@@ -71,8 +141,8 @@ const Register = () => {
               <label>Phone Number</label>
               <input
                 type="Tel"
-                onChange={(e) => setEmail(e.target.value)}
-                value={email}
+                onChange={(e) => setPhone(e.target.value)}
+                value={phone}
               />
             </div>
             <div className={styles.inputContainer2_}>
