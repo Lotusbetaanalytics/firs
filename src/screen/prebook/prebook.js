@@ -1,11 +1,41 @@
-import React from "react";
-import { TextField, Button } from "@material-ui/core";
-import { FaCaretRight } from "react-icons/fa";
+import React, { useEffect, useState } from "react";
+import { TextField } from "@material-ui/core";
+import { Button, Icon } from "semantic-ui-react";
 import PageTitle from "../../components/PageTitle/Pagetitle";
+import { useSelector, useDispatch } from "react-redux";
 import Navbar from "../../components/Navbar/Navbar";
+import { handleChange } from "./prebook.events";
 import "./prebook.css";
+import Alerts from "../../components/Alerts/Alert";
+import { preBookGuest } from "../../redux/actions/prebookActions/prebook.actions";
 
 const Prebook = () => {
+  const [name, setName] = useState("");
+  const [company, setCompany] = useState("");
+  const [email, setEmail] = useState("");
+  const [phoneNumber, setPhone] = useState("");
+  const [time, setTime] = useState("");
+  const [date, setDate] = useState("");
+  const [purpose, setPurpose] = useState("");
+  const prebook = useSelector((state) => state.preBookReducer); //get the state of the elements in this component
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    console.log(prebook);
+  }, [prebook]);
+
+  const handleSubmit = (event, ...state) => {
+    event.preventDefault();
+    dispatch(preBookGuest(...state));
+    setName("");
+    setDate("");
+    setTime("");
+    setPurpose("");
+    setEmail("");
+    setPhone("");
+    setCompany("");
+  };
+
   return (
     <div className="Prebook__container">
       <div className="prebook__navbar">
@@ -15,15 +45,49 @@ const Prebook = () => {
         <div className="prebook__pagetitle">
           <PageTitle heading="Prebook a Guest" />
         </div>
-        <form className="inputfields" noValidate autoComplete="off">
+        <div
+          className="alerts"
+          style={{
+            width: "60%",
+            position: "relative",
+            left: "100px",
+            top: "30px",
+          }}
+        >
+          {prebook.error ? <Alerts message={prebook.error} type="error" /> : ""}
+          {prebook.success ? (
+            <Alerts message="Guest Pre Booked!" type="success" />
+          ) : (
+            ""
+          )}
+        </div>
+
+        <form
+          className="inputfields"
+          noValidate
+          autoComplete="off"
+          onSubmit={(e) => {
+            handleSubmit(
+              e,
+              name,
+              email,
+              phoneNumber,
+              purpose,
+              company,
+              date,
+              time
+            );
+          }}
+        >
           <div className="date__time">
             <label htmlFor="name">Guest Name</label>
             <TextField
               id="name"
-              // label="Guest Name"
+              value={name}
               placeholder="Guest Name"
               variant="outlined"
               type="text"
+              onChange={(event) => handleChange(event, setName)}
             />
           </div>
           <div className="date__time">
@@ -33,6 +97,8 @@ const Prebook = () => {
               placeholder="Purpose of visit"
               variant="outlined"
               type="text"
+              value={purpose}
+              onChange={(event) => handleChange(event, setPurpose)}
             />
           </div>
           <div className="date__time">
@@ -40,8 +106,10 @@ const Prebook = () => {
             <TextField
               id="email"
               type="email"
+              value={email}
               placeholder="Guest Email"
               variant="outlined"
+              onChange={(event) => handleChange(event, setEmail)}
             />
           </div>
           <div className="date__time">
@@ -50,28 +118,56 @@ const Prebook = () => {
               id="mobile"
               placeholder="Guest Mobile"
               variant="outlined"
+              type="text"
+              value={phoneNumber}
+              onChange={(event) => handleChange(event, setPhone)}
             />
           </div>
           <div className="date__time">
-            <label htmlFor="host">Host</label>
-            <TextField id="host" placeholder="Host" variant="outlined" />
+            <label htmlFor="host">Company</label>
+            <TextField
+              id="host"
+              placeholder="Company"
+              value={company}
+              variant="outlined"
+              onChange={(event) => {
+                handleChange(event, setCompany);
+              }}
+            />
           </div>
           <div className="date__time">
             <label htmlFor="date">Expected Date</label>
-            <TextField type="date" id="date" variant="outlined" />
+            <TextField
+              type="date"
+              id="date"
+              variant="outlined"
+              value={date}
+              onChange={(event) => handleChange(event, setDate)}
+            />
           </div>
 
           <div className="date__time">
             <label htmlFor="time">Expected Time</label>
-            <TextField variant="outlined" id="time" type="time" />
+            <TextField
+              variant="outlined"
+              id="time"
+              type="time"
+              value={time}
+              onChange={(event) => handleChange(event, setTime)}
+            />
           </div>
           <div className="date__time">
             <Button
-              variant="contained"
-              color="primary"
-              endIcon={<FaCaretRight />}
+              animated
+              disabled={name && email && company ? false : true}
+              type="submit"
+              primary
+              loading={prebook.loading}
             >
-              Prebook Guest
+              <Button.Content visible>Pre Book Guest</Button.Content>
+              <Button.Content hidden>
+                <Icon name="arrow right" />
+              </Button.Content>
             </Button>
           </div>
         </form>

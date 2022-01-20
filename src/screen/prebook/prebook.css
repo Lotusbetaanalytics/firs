@@ -21,7 +21,7 @@
   grid-template-columns: auto auto;
   grid-gap: 30px;
   padding: 20px;
-  margin: 80px;
+  margin: 30px 80px;
   width: 70vw;
 }
 
@@ -30,10 +30,10 @@
   flex-direction: column;
   height: 80px;
 }
-.date__time button {
-  margin-top: 22px;
-  padding-top: 17px;
-  padding-bottom: 17px;
+
+.ui.animated.button {
+  margin-top: 20px;
+  padding: 20px;
 }
 
 @media screen and (max-width: 768px) {
@@ -55,7 +55,7 @@
     grid-template-columns: auto;
     grid-gap: 40px;
     padding: 20px;
-    width: 100%;
+    width: 90vw;
     margin: 0px;
   }
   .heading__form {
@@ -69,7 +69,7 @@
     grid-template-columns: auto;
     grid-gap: 30px;
     padding: 20px;
-    margin: 80px;
+    margin: 70px;
     width: 60vw;
   }
 
