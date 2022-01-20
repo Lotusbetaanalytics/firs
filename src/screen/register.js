@@ -34,7 +34,7 @@ const Register = () => {
   };
 
     return (
-        <div className={styles.customPadding}>
+        <div className={styles.customPadding_}>
            <div className={styles.container}>
           {msg && (
             <Alert status="warning">

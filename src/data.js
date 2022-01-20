@@ -1,6 +1,6 @@
 const data = [
     { id:1,
-      title: 'Beetlejuice',
+      title: 'Beetle juice',
       year: '1988',
       runtime : 34,
       genres: "rnb",

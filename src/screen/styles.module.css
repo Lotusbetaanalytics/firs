@@ -1,7 +1,7 @@
 /* * {
   outline: solid tomato;
 } */
-.customPadding {
+.customPadding_ {
   padding: 2rem 5%;
 }
 
@@ -169,6 +169,7 @@
     border-radius: 20px;
     box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
     padding-top: 10%;
+    margin-top: 5%;
   }
   .inputContainer_3 {
     display: grid;

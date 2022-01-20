@@ -1,10 +1,12 @@
 import React from 'react'
+import styles from "./styles.module.css";
 import Table from '../component/table';
+import { Tabletwo } from '../component/table 2/tabletwo';
 
 export const Log = () => {
     return (
-        <div>
-            <Table/>
+        <div className={styles.customPadding_}>
+            <Tabletwo/>
         </div>
     )
 }

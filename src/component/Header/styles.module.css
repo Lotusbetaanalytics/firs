@@ -8,6 +8,11 @@
   padding: 0 5%;
   box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
 }
+.logo {
+  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+  width: 100%;
+  padding: 0.4rem;
+}
 ul {
   display: flex;
   flex-direction: row;
@@ -54,9 +59,11 @@ ul li {
     display: flex;
     justify-content: center;
     font-size: 8px;
-    padding: 0.4rem;
+    padding: 0.2rem;
     min-width: 64px;
     border-radius: 5px;
+    box-shadow: rgba(238, 239, 240, 0.2) 0px 8px 12px;
+    margin-left: 5px;
   }
   .navContainer {
     display: flex;

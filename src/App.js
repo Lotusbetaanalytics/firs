@@ -5,7 +5,7 @@ import { Route } from "react-router-dom";
 import { BrowserRouter } from "react-router-dom";
 import Login from "./screen/login";
 import Register from "./screen/register";
-import TableComponent from "./component/table";
+import Log from "./screen/log";
 
 const App = () => {
   return (
@@ -14,7 +14,7 @@ const App = () => {
      <Routes>
        <Route path="/login" element = {<Login/>}/>
        <Route path="/register" element = {<Register/>}/>
-       <Route path="/log" element = {<TableComponent/>}/>
+       <Route path="/log" element = {<Log/>}/>
       </Routes>
      </BrowserRouter>
   )
