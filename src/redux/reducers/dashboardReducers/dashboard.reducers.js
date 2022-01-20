@@ -11,10 +11,17 @@ const INITIAL_STATE = {
   data: [],
 };
 
-export const getDashboardReducer = (state, { type, payload }) => {
+export const getDashboardReducer = (
+  state = INITIAL_STATE,
+  { type, payload }
+) => {
   switch (type) {
     case GET_DASHBOARD:
-      return {};
+      return { ...state, loading: true };
+    case GET_DASHBOARD_FAIL:
+      return { ...state, loading: false, error: payload };
+    case GET_DASHBOARD_SUCCESS:
+      return { ...state, loading: false, success: true, data: payload };
     default:
       return state;
   }
