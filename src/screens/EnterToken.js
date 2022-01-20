@@ -54,12 +54,7 @@ function EnterToken() {
                   placeholder="Enter Token"
                 />
               </div>
-              <button
-                type="submit"
-                className={styles.btn2}
-                isLoading
-                loadingText="Submitting Data..."
-              >
+              <button type="submit" className={styles.btn2}>
                 Submit Token
               </button>
             </form>
