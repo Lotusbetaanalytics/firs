@@ -9,7 +9,7 @@
   
   .logo img {
       width: 30%;
-      padding-top: 6rem;
+      margin-top: 6rem;
       margin-left: 200px;
 
   }
@@ -29,7 +29,7 @@
   }
 
   .welcomeQuote {
-padding-top: 9rem;
+margin-top: 9rem;
   }
 
 
@@ -125,7 +125,6 @@ padding-top: 9rem;
   grid-gap: 2%;
   width: 80%;
   margin: auto;
-  padding-top: 10%;
 }
 
 
@@ -138,6 +137,10 @@ select {
   border: 1px solid gainsboro;
   border-radius: 5px;
   outline: none;
+}
+
+input::placeholder {
+ margin-top: 10px;
 }
 
 .appform {
@@ -190,5 +193,24 @@ select {
   font-size: 30px;
 }
 
+/* get all token  */
+.gridBox {
+  display: grid;
+  grid-template-columns: 32% 32% 32%;
+  grid-gap: 3%;
+  justify-content: center;
+  padding-left: 6rem;
+  padding-right: 6rem;
+}
+
+.eachGridBox {
+display: grid;
+padding-top: 2rem;
+background-color: whitesmoke;
+}
+
+header {
+  font-size: 20px;
+}
 
 
