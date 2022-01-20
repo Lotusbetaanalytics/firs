@@ -1,8 +1,17 @@
 import React from 'react'
 import MaterialTable from 'material-table';
 import data from '../../data';
+import { useSelector } from 'react-redux';
+import { logAction } from '../../redux/actions_/logActions';
 
 export const Tabletwo = () => {
+  
+  useEffect(() => {
+    dispatch(logAction());
+     }, [dispatch]);
+
+  const getlog = useSelector((state) => state.getlog);
+  const { data } = getlog;
     return (
         <div>
             <div style={{ maxWidth: "100%" }}>

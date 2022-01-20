@@ -16,7 +16,7 @@ import { ADMIN_CHANGE_PASSWORD_FAIL,
      ADMIN_REGISTRATION_SUCCESS } from "../constants_/adminConstants";
 
 export const adminRegister =
-  (firstName, lastName, email, phone, password, examType) =>
+  (firstName, lastName, phoneNumber, email, password, department,floor,officeNumber,isAdmin) =>
   async (dispatch) => {
     try {
       dispatch({ type: ADMIN_REGISTRATION_REQUEST });
@@ -27,14 +27,17 @@ export const adminRegister =
         },
       };
       const { data } = await axios.post(
-        "/api/v1/candidate/",
+        "/api/v1/auth/",
         {
           firstName,
           lastName,
+          phoneNumber,
           email,
-          phone,
           password,
-          examType,
+          department,
+          floor,
+          officeNumber,
+          isAdmin
         },
         config
       );
@@ -54,7 +57,7 @@ export const adminRegister =
     }
   };
 
-export const loginADMIN = (email, password) => async (dispatch) => {
+export const loginAdmin = (email, password) => async (dispatch) => {
   try {
     dispatch({
       type: ADMIN_LOGIN_REQUEST,
@@ -66,7 +69,7 @@ export const loginADMIN = (email, password) => async (dispatch) => {
       },
     };
     const { data } = await axios.post(
-      "/api/v1/auth/",
+      "/api/v1/auth/login",
       { email, password },
       config
     );
@@ -107,7 +110,7 @@ export const adminDetails = () => async (dispatch, getState) => {
       },
     };
 
-    const { data } = await axios.get("/api/v1/auth/account", config);
+    const { data } = await axios.get("/api/v1/auth/logout", config);
     dispatch({
       type: ADMIN_DETAILS_SUCCESS,
       payload: data,

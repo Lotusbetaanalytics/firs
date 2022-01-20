@@ -42,7 +42,7 @@ const Login = () => {
 
   useEffect(() => {
     if (adminInfo) {
-      navigate("/dashboard");
+      navigate("/log");
     }
   }, [adminInfo, navigate]);
 

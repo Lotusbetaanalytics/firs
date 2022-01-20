@@ -14,13 +14,16 @@ const Register = () => {
   const dispatch = useDispatch();
   const [firstName, setFirstName] = useState("");
   const [lastName, setLastName] = useState("");
-  const [role, setRole] = useState("");
+  const [phoneNumber, setPhoneNumber] = useState("");
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
   const [department, setDepartment] = useState("");
   const [floor, setFloor] = useState("");
-  const [office, setOffice] = useState("");
-  const [email, setEmail] = useState("");
-  const [phone, setPhone] = useState("");
-  const [password, setPassword] = useState("");
+  const [officeNumber, setOfficeNumber] = useState("");
+  const role = 'admin';
+  
+  
+  
   const [confirmPassword, setConfirmPassword] = useState("");
   const [msg, setMsg] = useState(false);
   const [pmsg, setPMsg] = useState(false);
@@ -40,9 +43,9 @@ const Register = () => {
       !role ||
       !department ||
       !floor ||
-      !office ||
+      !officeNumber ||
       !email ||
-      !phone ||
+      !phoneNumber ||
       !password ||
       !confirmPassword
     ) {
@@ -54,12 +57,13 @@ const Register = () => {
           adminRegister(
             firstName,
             lastName,
-            role,
+            phoneNumber,
+            email,
+            password,
             department,
             floor,
-            office,
-            email,
-            password
+            officeNumber,
+            role,
           )
         );
       } else {
@@ -141,18 +145,11 @@ const Register = () => {
               <label>Phone Number</label>
               <input
                 type="Tel"
-                onChange={(e) => setPhone(e.target.value)}
-                value={phone}
+                onChange={(e) => setPhoneNumber(e.target.value)}
+                value={phoneNumber}
               />
             </div>
-            <div className={styles.inputContainer2_}>
-              <label>Role</label>
-              <input
-                type="text"
-                onChange={(e) => setRole(e.target.value)}
-                value={role}
-              />
-            </div>
+            
             <div className={styles.inputContainer2_}>
               <label>Department</label>
               <input
@@ -170,11 +167,11 @@ const Register = () => {
               />
             </div>
             <div className={styles.inputContainer2_}>
-              <label>Office Room Number</label>
+              <label>Office Number</label>
               <input
                 type="number"
-                onChange={(e) => setOffice(e.target.value)}
-                value={office}
+                onChange={(e) => setOfficeNumber(e.target.value)}
+                value={officeNumber}
               />
             </div>
             <div className={styles.inputContainer2_}>
@@ -193,8 +190,6 @@ const Register = () => {
                 value={confirmPassword}
               />
             </div>
-            
-            <div className={`${styles.inputContainer_3} ${styles.center}`}>
             <div className={styles.inputContainer2_}>
               <label style={{ visibility: "hidden" }}>Register</label>
               {loading ? (
@@ -210,12 +205,11 @@ const Register = () => {
                 <input
                   type="submit"
                   value="register"
-                  className={`${styles.btn} ${styles.green} ${styles.marginTop}`}
+                  className={`${styles.btn} ${styles.green}`}
                 />
-                
               )}
-    
             </div>
+            <div className={`${styles.inputContainer_3} ${styles.center}`}>
             <div>
             Have an account? <Link to="/login">Log in</Link>
             </div>
