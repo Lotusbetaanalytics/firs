@@ -5,18 +5,30 @@ import styles from "../styles.module.css";
 import { useDispatch, useSelector } from "react-redux";
 import { userToken } from "../redux/action/userTokenAction";
 import { Alert, AlertIcon, Center, CircularProgress } from "@chakra-ui/react";
+import { useNavigate } from "react-router-dom";
 
 function EnterToken() {
   const [token, setToken] = useState("");
+  const [msg, setMsg] = useState(false);
   const dispatch = useDispatch();
+  const navigate = useNavigate();
 
   const submitHandler = (e) => {
     e.preventDefault();
-    dispatch(userToken(token));
+    if (!token) {
+      setMsg(true);
+    } else {
+      setMsg(false);
+      dispatch(userToken(token));
+    }
   };
 
   const tokenUser = useSelector((state) => state.tokenUser);
   const { success, error, loading } = tokenUser;
+
+  if (success) {
+    navigate("/gettokeninfo");
+  }
 
   return (
     <div>
@@ -32,23 +44,33 @@ function EnterToken() {
               {error}
             </Alert>
           )}
-
+          {msg && (
+            <Alert status="error">
+              <AlertIcon />
+              Enter Token
+            </Alert>
+          )}
           {success && (
             <Alert status="success">
               <AlertIcon />
+              Success
             </Alert>
           )}
 
           {loading ? (
             <Center>
-              <CircularProgress isIndeterminate color="purple.300" />
+              <CircularProgress
+                isIndeterminate
+                color="red.300"
+                thickness="12px"
+              />
             </Center>
           ) : (
             <form onSubmit={submitHandler}>
               <div className={styles.inputContainer}>
                 <label>Enter Token</label>
                 <input
-                  type="number"
+                  type="text"
                   onChange={(e) => setToken(e.target.value)}
                   value={token}
                   placeholder="Enter Token"

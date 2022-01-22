@@ -9,7 +9,7 @@ function TokenSuccess() {
       <Header />
       <div className={styles.successcheck}>
         <div className={styles.successTitle}>
-          <div>Token Successful</div>
+          <div>Check-In Successful</div>
         </div>
         <div className={styles.successPic}>
           <img src={successIcon3} alt="Success Check" />

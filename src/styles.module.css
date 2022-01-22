@@ -43,11 +43,11 @@ margin-top: 9rem;
 
   .btn {
     width: 300px;
-    height: 4rem;
-    padding-left: 2rem;
+    height: 3rem;
+    padding-left: 4rem;
     padding-top: 20px;
-    padding-right: 2rem;
-    padding-bottom: 2rem;
+    padding-right: 4rem;
+    padding-bottom: 1.5rem;
     border-radius: 10px;
     text-align: center;
     font-weight: bold;
@@ -55,8 +55,9 @@ margin-top: 9rem;
     background-color: maroon;
 
   }
+
   .btnContainer {
-    margin-top: 25px;
+    margin-top: 35px;
   }
 
   .btn2 {
@@ -106,8 +107,8 @@ margin-top: 9rem;
   }
 
 .tokenpic img {
-  width: 30%;
-  height: 50%;
+  width: 25%;
+  height: 30%;
 }
 
 /* Token Information */
@@ -211,6 +212,21 @@ background-color: whitesmoke;
 
 header {
   font-size: 20px;
+}
+
+.btn4 {
+  width: 50%;
+  height: 4rem;
+  padding-left: 4rem;
+  padding-top: 20px;
+  padding-right: 4rem;
+  padding-bottom: 2rem;
+  border-radius: 10px;
+  text-align: center;
+  font-weight: bold;
+  color: aliceblue;
+  background-color: maroon;
+
 }
 
 

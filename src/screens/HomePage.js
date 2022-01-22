@@ -2,6 +2,7 @@ import React from "react";
 import Header from "../components/Header";
 import avatar from "../assets/avatar.png";
 import styles from "../styles.module.css";
+import { Link } from "react-router-dom";
 
 function HomePage() {
   return (
@@ -18,7 +19,9 @@ function HomePage() {
             pay your taxes and visit our webistes for more information.
           </h3>
           <div className={styles.btnContainer}>
-            <button className={styles.btn}>Get Started</button>
+            <Link to="/entertoken" className={styles.btn}>
+              Get Started
+            </Link>
           </div>
         </div>
       </div>

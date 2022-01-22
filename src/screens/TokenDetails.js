@@ -1,8 +1,12 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import Header from "../components/Header";
 import styles from "../styles.module.css";
+import { useSelector } from "react-redux";
 
-function AllTokenUser() {
+function TokenDetails() {
+  const tokenUser = useSelector((state) => state.tokenUser);
+  const { getToken } = tokenUser;
   return (
     <div>
       <Header />
@@ -11,7 +15,7 @@ function AllTokenUser() {
           <div className={styles.eachGridBox}>
             <header>Name</header>
             <span className={styles.titleContainer}>
-              <p className={styles.titleName}>John Doe</p>
+              <p className={styles.titleName}>{getToken && getToken.name}</p>
             </span>
           </div>
 
@@ -91,10 +95,15 @@ function AllTokenUser() {
               <p className={styles.titleName}>Approved</p>
             </span>
           </div>
+          <div className={styles.btnContainer}>
+            <Link to="/entertoken/:token" className={styles.btn4}>
+              Back
+            </Link>
+          </div>
         </div>
       </div>
     </div>
   );
 }
 
-export default AllTokenUser;
+export default TokenDetails;

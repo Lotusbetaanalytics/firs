@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import styles from './styles.module.css'
 import logo from "../../assets/logo.png"
+import { Link } from 'react-router-dom'
 
 function Header() {
     const [ user,setUser] = useState(false)
@@ -12,7 +13,9 @@ function Header() {
             <div className={styles.header}>
                 <ul>
                     <div className={styles.log}>
+                        <Link to='/'>
                         <img src={logo} alt="" />
+                        </Link>
                     </div>
                 </ul>
                 {user? (

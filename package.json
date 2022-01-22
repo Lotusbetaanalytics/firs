@@ -2,7 +2,7 @@
   "name": "firs",
   "version": "0.1.0",
   "private": true,
-  "proxy": " https://firs-vms-backend.herokuapp.com",
+  "proxy": "https://firs-vms-backend.herokuapp.com",
   "dependencies": {
     "@chakra-ui/react": "^1.6.12",
     "@emotion/react": "11",
