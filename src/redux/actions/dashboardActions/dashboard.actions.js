@@ -6,14 +6,16 @@ import {
 } from "../../constants";
 
 export const getDashboard = () => {
-  return (dispatch) => {
+  return async (dispatch) => {
     try {
       dispatch({
         type: GET_DASHBOARD,
       });
-      const res = axios.get(
+      const res = await axios.get(
         "https://firs-vms-backend.herokuapp.com/api/v1/logs"
       );
+
+      localStorage.setItem("dashboard", JSON.stringify(res.data));
       dispatch({
         type: GET_DASHBOARD_SUCCESS,
         payload: res.data,

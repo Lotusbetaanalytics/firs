@@ -26,12 +26,12 @@
 }
 .navbar__links a:hover {
   text-decoration: underline;
+  color: maroon;
 }
 
 .link {
   display: flex;
   align-items: center;
-  /* justify-content: center; */
   grid-gap: 4px;
   font-size: 16px;
 }

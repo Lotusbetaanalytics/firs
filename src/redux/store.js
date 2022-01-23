@@ -1,4 +1,5 @@
 import { configureStore } from "@reduxjs/toolkit";
+// import axios from "axios";
 
 import { rootReducer } from "./reducers/index";
 

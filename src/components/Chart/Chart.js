@@ -4,22 +4,33 @@ import { Doughnut } from "react-chartjs-2";
 
 ChartJS.register(ArcElement, Tooltip, Legend);
 
-const data = {
-  labels: ["Visitors Today", "Pending", "Checked In", "Checked Out"],
-  datasets: [
-    {
-      data: [12, 19, 3, 5],
-      backgroundColor: [
-        "Teal",
-        "rgba(54, 162, 235)",
-        "rgba(255, 206, 86)",
-        "rgba(75, 192, 192)",
-      ],
-      border: 1,
-    },
-  ],
-};
-
-export default function DoughChart() {
+export default function DoughChart(props) {
+  const data = {
+    labels: [
+      "Visitors Today",
+      "Pending",
+      "Checked In",
+      "Checked Out",
+      "All Visitors",
+    ],
+    datasets: [
+      {
+        data: [
+          props.visitors,
+          props.pending,
+          props.checkedin,
+          props.checkedout,
+          props.allVisitors,
+        ],
+        backgroundColor: [
+          "Teal",
+          "rgba(54, 162, 235)",
+          "rgba(255, 206, 86)",
+          "rgba(75, 192, 192)",
+        ],
+        border: 1,
+      },
+    ],
+  };
   return <Doughnut data={data} />;
 }

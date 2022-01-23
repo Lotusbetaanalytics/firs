@@ -9,6 +9,7 @@ const BASE_URL = "https://firs-vms-backend.herokuapp.com/api/v1";
 export const preBookGuest = (...formData) => {
   const [name, email, phoneNumber, purpose, company, date, time] = formData;
   let token =
+    JSON.parse(localStorage.getItem("token")) ||
     "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYxZTlhNmY2OTY3OWRlYjNmMjk0ZjU0NiIsImlhdCI6MTY0MjcwMzEzMSwiZXhwIjoxNjQ1Mjk1MTMxfQ.6q2lUQzkTWA-0irWlloOGc_HMgZi2ED6Rbd9lDnRuW4";
   return async (dispatch) => {
     try {
@@ -20,7 +21,7 @@ export const preBookGuest = (...formData) => {
         company,
         date,
         time,
-        token,
+
         // timeIn: "1/20/2022, 11:12:40 AM",
         // timeOut: "1/20/2022, 11:12:40 AM",
         // isActive: true,

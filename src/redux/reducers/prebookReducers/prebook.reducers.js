@@ -2,6 +2,7 @@ import {
   PRE_BOOK_GUEST,
   PRE_BOOK_GUEST_FAIL,
   PRE_BOOK_GUEST_SUCCESS,
+  PRE_BOOK_GUEST_RESET,
 } from "../../constants";
 
 const INITIAL_STATE = {
@@ -29,6 +30,8 @@ export const preBookReducer = (state = INITIAL_STATE, { type, payload }) => {
         error: null,
         success: true,
       };
+    case PRE_BOOK_GUEST_RESET:
+      return {};
     default:
       return state;
   }

@@ -13,7 +13,12 @@
   margin: 0 auto;
   width: 80%;
   height: 10vh;
-  border: 1px solid blue;
+  border: 1px solid maroon;
+}
+
+.MuiOutlinedInput-input:focus {
+  /* outline: 1px solid maroon !important; */
+  border-radius: inherit;
 }
 
 .inputfields {
@@ -34,6 +39,8 @@
 .ui.animated.button {
   margin-top: 20px;
   padding: 20px;
+  background: maroon;
+  color: white;
 }
 
 @media screen and (max-width: 768px) {

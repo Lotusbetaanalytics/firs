@@ -1,6 +1,6 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import { TextField } from "@material-ui/core";
-import { Button, Icon } from "semantic-ui-react";
+import { Button } from "semantic-ui-react";
 import PageTitle from "../../components/PageTitle/Pagetitle";
 import { useSelector, useDispatch } from "react-redux";
 import Navbar from "../../components/Navbar/Navbar";
@@ -8,9 +8,12 @@ import { handleChange } from "./prebook.events";
 import "./prebook.css";
 import Alerts from "../../components/Alerts/Alert";
 import { preBookGuest } from "../../redux/actions/prebookActions/prebook.actions";
+import { getDashboard } from "../../redux/actions/dashboardActions/dashboard.actions";
+import { PRE_BOOK_GUEST_RESET } from "../../redux/constants";
 
 const Prebook = () => {
   const [name, setName] = useState("");
+  const [msg, setMsg] = useState(false);
   const [company, setCompany] = useState("");
   const [email, setEmail] = useState("");
   const [phoneNumber, setPhone] = useState("");
@@ -20,12 +23,16 @@ const Prebook = () => {
   const prebook = useSelector((state) => state.preBookReducer); //get the state of the elements in this component
   const dispatch = useDispatch();
 
-  useEffect(() => {
-    console.log(prebook);
-  }, [prebook]);
+  if (prebook.success) {
+    dispatch(getDashboard());
+    dispatch({ type: PRE_BOOK_GUEST_RESET });
+    setMsg(true);
+  }
 
   const handleSubmit = (event, ...state) => {
     event.preventDefault();
+    let localTime = new Date();
+    setTime(localTime.toLocaleTimeString());
     dispatch(preBookGuest(...state));
     setName("");
     setDate("");
@@ -54,9 +61,16 @@ const Prebook = () => {
             top: "30px",
           }}
         >
-          {prebook.error ? <Alerts message={prebook.error} type="error" /> : ""}
-          {prebook.success ? (
-            <Alerts message="Guest Pre Booked!" type="success" />
+          {prebook.error ? (
+            <Alerts
+              message="An error occured! Please try again."
+              type="error"
+            />
+          ) : (
+            ""
+          )}
+          {msg ? (
+            <Alerts message="Guest Pre Booked!" type="success" show={msg} />
           ) : (
             ""
           )}
@@ -159,15 +173,21 @@ const Prebook = () => {
           <div className="date__time">
             <Button
               animated
-              disabled={name && email && company ? false : true}
+              disabled={
+                name &&
+                email &&
+                company &&
+                date &&
+                time &&
+                phoneNumber &&
+                purpose
+                  ? false
+                  : true
+              }
               type="submit"
-              primary
               loading={prebook.loading}
             >
-              <Button.Content visible>Pre Book Guest</Button.Content>
-              <Button.Content hidden>
-                <Icon name="arrow right" />
-              </Button.Content>
+              Pre Book Guest
             </Button>
           </div>
         </form>
