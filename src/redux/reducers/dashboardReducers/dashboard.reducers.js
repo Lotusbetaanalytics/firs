@@ -10,7 +10,7 @@ const INITIAL_STATE = {
   error: null,
   data: JSON.parse(localStorage.getItem("dashboard")),
 };
-let dat = JSON.parse(localStorage.getItem("dashboard"));
+let dat = JSON.parse(localStorage.getItem("dashboard")) || [];
 
 export const getDashboardReducer = (
   state = INITIAL_STATE,
