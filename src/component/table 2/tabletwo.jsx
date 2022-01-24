@@ -1,33 +1,63 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import MaterialTable from 'material-table';
-import data from '../../data';
-import { useSelector } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { logAction } from '../../redux/actions_/logActions';
 
 export const Tabletwo = () => {
-  
+  const dispatch = useDispatch();
+
   useEffect(() => {
     dispatch(logAction());
      }, [dispatch]);
 
   const getlog = useSelector((state) => state.getlog);
   const { data } = getlog;
+
+  console.log(data)
+
     return (
         <div>
             <div style={{ maxWidth: "100%" }}>
         <MaterialTable
           columns={[
-            { title: "id", field: "id" },
-            { title: "title", field: "title" },
-            { title: "year", field: "year", type: "numeric" },
+            { title: "id", field: "_id" },
+            { title: "Name", field: "name" },
+            { title: "Email", field: "email" },
             {
-              title: "interval",field: "runtime",
+              title: "Phone Number",field: "phoneNumber",
             },
             {
-                title: "type of music",field: "genres",
+                title: "Company Name",field: "company",
               },
               {
-                title: "who direct",field: "director",
+                title: "Laptop",field: "laptop",
+              },
+              {
+                title: "Host Name",field: "host.firstName",
+              },
+              {
+                title: "Time",field: "time",
+              },
+              {
+                title: "Date",field: "date",
+              },
+              {
+                title: "Purpose",field: "purpose",
+              },
+              {
+                title: "Time in",field: "timeIn",
+              },
+              {
+                title: "Time out",field: "timeOut",
+              },
+              {
+                title: "Token",field: "token",
+              },
+              {
+                title: "Active",field: "isActive",
+              },
+              {
+                title: "Status",field: "status",
               },
           ]}
           data={data}

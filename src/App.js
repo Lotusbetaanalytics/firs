@@ -6,6 +6,7 @@ import { BrowserRouter } from "react-router-dom";
 import Login from "./screen/login";
 import Register from "./screen/register";
 import Log from "./screen/log";
+import AdminForgot from "./screen/adminForgot";
 
 const App = () => {
   return (
@@ -15,6 +16,7 @@ const App = () => {
        <Route path="/login" element = {<Login/>}/>
        <Route path="/register" element = {<Register/>}/>
        <Route path="/log" element = {<Log/>}/>
+       <Route path="/adminForgot" element = {<AdminForgot/>}/>
       </Routes>
      </BrowserRouter>
   )

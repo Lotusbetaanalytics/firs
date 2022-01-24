@@ -5,7 +5,8 @@ import styles from "./styles.module.css";
 import { Alert, AlertIcon, useToast, Button } from "@chakra-ui/react";
 import { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { ADMIN_REGISTRATION_RESET } from '../redux/constants_/adminConstants';
+import { ADMIN_LOGIN_RESET, ADMIN_REGISTRATION_RESET } from '../redux/constants_/adminConstants';
+import { registerAdmin } from '../redux/actions_/adminActions';
 
 
 const Register = () => {
@@ -20,7 +21,7 @@ const Register = () => {
   const [department, setDepartment] = useState("");
   const [floor, setFloor] = useState("");
   const [officeNumber, setOfficeNumber] = useState("");
-  const role = 'admin';
+  const isAdmin = true;
   
   
   
@@ -40,7 +41,6 @@ const Register = () => {
     if (
       !firstName ||
       !lastName ||
-      !role ||
       !department ||
       !floor ||
       !officeNumber ||
@@ -54,7 +54,7 @@ const Register = () => {
       setMsg(false);
       if (password === confirmPassword) {
         dispatch(
-          adminRegister(
+          registerAdmin(
             firstName,
             lastName,
             phoneNumber,
@@ -63,7 +63,7 @@ const Register = () => {
             department,
             floor,
             officeNumber,
-            role,
+            isAdmin,
           )
         );
       } else {
@@ -81,6 +81,7 @@ const Register = () => {
       isClosable: true,
     });
     dispatch({ type: ADMIN_REGISTRATION_RESET });
+    
   }
 
   if (success) {
@@ -91,13 +92,16 @@ const Register = () => {
       duration: 9000,
       isClosable: true,
     });
+    dispatch({ type: ADMIN_LOGIN_RESET });
     dispatch({ type: ADMIN_REGISTRATION_RESET });
-    navigate("/login");
+    navigate("/login")
+    
+    
   }
 
   useEffect(() => {
     if (adminInfo) {
-      navigate("/dashboard");
+      navigate("/log");
     }
   }, [adminInfo, navigate]);
 
@@ -161,7 +165,7 @@ const Register = () => {
             <div className={styles.inputContainer2_}>
               <label>Office floor</label>
               <input
-                type="email"
+                type="text"
                 onChange={(e) => setFloor(e.target.value)}
                 value={floor}
               />

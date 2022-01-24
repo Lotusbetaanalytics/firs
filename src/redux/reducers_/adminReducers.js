@@ -27,6 +27,8 @@ export const adminRegisterReducer = (state = {}, action) => {
         return { loading: false, error: action.payload };
       case ADMIN_REGISTRATION_RESET:
         return {};
+        case ADMIN_LOGIN_RESET:
+        return {};
       default:
         return state;
     }
@@ -54,7 +56,7 @@ export const adminRegisterReducer = (state = {}, action) => {
       case ADMIN_DETAILS_REQUEST:
         return { loading: true };
       case ADMIN_DETAILS_SUCCESS:
-        return { loading: false, success: true, admin: action.payload.data };
+        return { loading: false, success: true, adminInfo: action.payload.data };
       case ADMIN_DETAILS_FAIL:
         return { loading: false, error: action.payload };
       default:

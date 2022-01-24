@@ -101,27 +101,7 @@
   background-color: #ab262a;
   color: white;
 }
-.microsoft {
-  display: flex;
-  flex-direction: row;
-  height: 3.5rem;
-  width: 90%;
-  padding: 5px;
-  border: solid 1px rgba(149, 157, 165, 0.2);
-  margin-left: 18px;
-  justify-content: center;
-  border-radius: 10px;
-}
-.micro {
-  height: 50px;
-  width: 50px;
-  margin-left: 10px;
-  padding: 2%;
-}
-.microsoft img {
-  height: 100%;
-  width: 100%;
-}
+
 .paddingTp {
   padding-top: 10px;
 }
@@ -218,7 +198,7 @@
 /* desktop-only */
 @media (min-width: 1300px) and (max-width: 1799px) {
   .mdForm {
-    width: 50%;
+    width: 40%;
     min-height: 70vh;
   }
 }

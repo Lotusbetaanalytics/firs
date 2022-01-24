@@ -1,4 +1,6 @@
+import axios from "axios";
 import { LOG_FAIL, LOG_REQUEST, LOG_SUCCESS } from "../constants_/logConstants";
+
 
 export const logAction = () => async (dispatch, getState) => {
     try {
@@ -18,12 +20,13 @@ export const logAction = () => async (dispatch, getState) => {
       dispatch({
         type: LOG_SUCCESS,
         payload: data,
+        
       });
+      console.log(data)
     } catch (error) {
       dispatch({
         type: LOG_FAIL,
-        payload:
-          error.response && error.response.data.error
+        payload:error.response && error.response.data.error
             ? error.response.data.error
             : error.message,
       });

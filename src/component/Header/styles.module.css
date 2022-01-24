@@ -36,6 +36,8 @@ ul li {
 }
 
 .name {
+  display: flex;
+  justify-content: space-between;
   color: black;
 }
 .center {

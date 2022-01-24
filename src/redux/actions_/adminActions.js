@@ -14,8 +14,9 @@ import { ADMIN_CHANGE_PASSWORD_FAIL,
      ADMIN_REGISTRATION_FAIL, 
      ADMIN_REGISTRATION_REQUEST, 
      ADMIN_REGISTRATION_SUCCESS } from "../constants_/adminConstants";
+     import axios from "axios";
 
-export const adminRegister =
+export const registerAdmin =
   (firstName, lastName, phoneNumber, email, password, department,floor,officeNumber,isAdmin) =>
   async (dispatch) => {
     try {
@@ -50,7 +51,7 @@ export const adminRegister =
       dispatch({
         type: ADMIN_REGISTRATION_FAIL,
         payload:
-          error.response && error.response.data.error
+          error.response && error.response.data.message
             ? error.response.data.error
             : error.message,
       });
@@ -69,7 +70,7 @@ export const loginAdmin = (email, password) => async (dispatch) => {
       },
     };
     const { data } = await axios.post(
-      "/api/v1/auth/login",
+      "/api/v1/auth/login/",
       { email, password },
       config
     );
@@ -110,7 +111,7 @@ export const adminDetails = () => async (dispatch, getState) => {
       },
     };
 
-    const { data } = await axios.get("/api/v1/auth/logout", config);
+    const { data } = await axios.get("/api/v1/auth/", config);
     dispatch({
       type: ADMIN_DETAILS_SUCCESS,
       payload: data,
@@ -119,7 +120,7 @@ export const adminDetails = () => async (dispatch, getState) => {
     dispatch({
       type: ADMIN_DETAILS_FAIL,
       payload:
-        error.response && error.response.data.error
+        error.response && error.response.data.message
           ? error.response.data.error
           : error.message,
     });
@@ -149,7 +150,7 @@ export const adminForgetpassword = (email) => async (dispatch) => {
     dispatch({
       type: ADMIN_FORGET_PASSWORD_FAIL,
       payload:
-        error.response && error.response.data.error
+        error.response && error.response.data.message
           ? error.response.data.error
           : error.message,
     });
@@ -166,7 +167,7 @@ export const changePassword = (email) => async (dispatch) => {
       },
     };
     const { data } = await axios.post(
-      "/api/v1/auth/resetPassword/:resettoken",
+      "/api/v1/auth/resetPassword/:resettoken/",
       { email },
       config
     );

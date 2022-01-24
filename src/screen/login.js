@@ -6,6 +6,7 @@ import { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { ADMIN_LOGIN_RESET } from '../redux/constants_/adminConstants';
 import { useEffect } from 'react';
+import { loginAdmin } from '../redux/actions_/adminActions';
 
 
 const Login = () => {
@@ -26,7 +27,7 @@ const Login = () => {
       setMsg(true);
     } else {
       setMsg(false);
-      dispatch((email, password));
+      dispatch(loginAdmin(email, password));
     }
   };
   if (error) {
@@ -73,14 +74,14 @@ const Login = () => {
                 value={password}
               />
             </div>
-            <span className={styles.forget}><Link to="/forgotPassword">Forgot Password?</Link></span> 
+            <span className={styles.forget}><Link to="/adminForgot">Forgot Password?</Link></span> 
             <div className={styles.inputContainer_}>
               <label style={{ visibility: "hidden" }}>Login</label>
               {loading ? (
                 <Button
                   isLoading
                   loadingText="Validating Credentials..."
-                  colorScheme="teal"
+                  colorScheme="wine"
                   variant="outline"
                   isFullWidth
                   style={{ height: "5rem" }}
@@ -93,10 +94,6 @@ const Login = () => {
                 />
               )}
             </div>
-            <div className={styles.microsoft}>
-                <span className={styles.paddingTp} >Sign in with Microsoft</span>
-                 <div className={styles.micro}>  <img src='https://upload.wikimedia.org/wikipedia/commons/thumb/4/44/Microsoft_logo.svg/1200px-Microsoft_logo.svg.png' alt='microsoft logo'/></div> 
-                </div>
             <div className={styles.text2}>Don't Have an account? <Link to="/register">Register</Link>
             </div>
           </form>

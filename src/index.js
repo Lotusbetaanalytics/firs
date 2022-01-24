@@ -4,17 +4,14 @@ import App from "./App";
 import reportWebVitals from "./reportWebVitals";
 import { Provider } from "react-redux";
 import { ChakraProvider } from "@chakra-ui/react";
-import { StyledEngineProvider } from '@mui/material/styles';
 import store from "./redux/store";
-import "./index.css";
 
 ReactDOM.render(
   <Provider store={store}>
-    <StyledEngineProvider injectFirst>
+
     <ChakraProvider>
       <App />
     </ChakraProvider>
-    </StyledEngineProvider>,
   </Provider>,
   document.getElementById("root")
 );
