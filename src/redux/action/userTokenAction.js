@@ -23,7 +23,9 @@ export const userToken = (token, navigate) => async (dispatch) => {
     });
 
     localStorage.setItem("getToken", JSON.stringify(data));
-    navigate("/gettokeninfo");
+    setTimeout(() => {
+      navigate("/tokensuccess");
+    }, 2000);
   } catch (error) {
     dispatch({
       type: USER_TOKEN_FAIL,
