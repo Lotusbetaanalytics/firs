@@ -1,34 +1,25 @@
 import React, { useEffect } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import Header from "../components/Header";
 import styles from "../styles.module.css";
-import { useDispatch, useSelector } from "react-redux";
+
 import { useState } from "react";
-import store from "../redux/store";
-import { USER_TOKEN_SUCCESS } from "../redux/constants/userTokenContants";
 
 function TokenDetails() {
-  const dispatch = useDispatch();
+  let navigate = useNavigate();
   const [tokenDetailName, setTokeDetailName] = useState("");
-  const tokenUser = useSelector((state) => state.tokenUser);
-  const { getToken, success } = tokenUser;
+  const [email, setEmail] = useState("");
 
-  if (success) {
-    // dispatch({ type: USER_TOKEN_SUCCESS });
-    console.log("look at me");
-    console.log(getToken);
-  }
+  const user = JSON.parse(localStorage.getItem("getToken"));
 
-  // const data = getToken;
-
-  // const host = data;
-  // console.log(host);
-  // console.log(data);
-
-  // useEffect(() => {
-  //   // dispatch(userToken());
-  //   setTokeDetailName(getToken.data.name);
-  // }, [getToken]);
+  useEffect(() => {
+    if (!user) {
+      navigate("/entertoken");
+    } else {
+      setTokeDetailName(user.data.name);
+      setEmail(user.data.email);
+    }
+  }, [user, navigate]);
 
   return (
     <div>
@@ -41,14 +32,14 @@ function TokenDetails() {
               <p className={styles.titleName}>{tokenDetailName}</p>
             </span>
           </div>
-          {/* 
+
           <div className={styles.eachGridBox}>
             <header>Email</header>
             <span className={styles.titleContainer}>
-              <p className={styles.titleName}>{getToken.data.email}</p>
+              <p className={styles.titleName}>{email}</p>
             </span>
           </div>
-
+          {/*
           <div className={styles.eachGridBox}>
             <header>Phone Number</header>
             <span className={styles.titleContainer}>

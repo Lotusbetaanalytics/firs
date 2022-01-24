@@ -5,7 +5,7 @@ import {
   USER_TOKEN_FAIL,
 } from "../constants/userTokenContants";
 
-export const userToken = (token) => async (dispatch) => {
+export const userToken = (token, navigate) => async (dispatch) => {
   try {
     dispatch({ type: USER_TOKEN_REQUEST });
 
@@ -21,9 +21,9 @@ export const userToken = (token) => async (dispatch) => {
       type: USER_TOKEN_SUCCESS,
       payload: data,
     });
-    console.log(data, "this is from action");
 
     localStorage.setItem("getToken", JSON.stringify(data));
+    navigate("/gettokeninfo");
   } catch (error) {
     dispatch({
       type: USER_TOKEN_FAIL,

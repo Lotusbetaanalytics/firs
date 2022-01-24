@@ -13,24 +13,18 @@ function EnterToken() {
   const dispatch = useDispatch();
   const navigate = useNavigate();
 
+  const tokenUser = useSelector((state) => state.tokenUser);
+  const { success, error, loading } = tokenUser;
+
   const submitHandler = (e) => {
     e.preventDefault();
     if (!token) {
       setMsg(true);
     } else {
       setMsg(false);
-      dispatch(userToken(token));
+      dispatch(userToken(token, navigate));
     }
   };
-
-  const tokenUser = useSelector((state) => state.tokenUser);
-  const { success, error, loading } = tokenUser;
-
-  if (success) {
-    // dispatch(userToken(token));
-    navigate("/gettokeninfo");
-    console.log(tokenUser);
-  }
 
   return (
     <div>
