@@ -13,11 +13,12 @@ function HomePage() {
           <img src={avatar} alt="FIRS" />
         </div>
         <div className={styles.welcomeQuote}>
-          <h1>Welcome</h1>
-          <h3>
+          <h1>Visitors Management System</h1>
+          <h2>Welcome,</h2>
+          <h4>
             Connect to the FIRS to get better understanding on your tax rates,
             pay your taxes and visit our webistes for more information.
-          </h3>
+          </h4>
           <div className={styles.btnContainer}>
             <Link to="/entertoken" className={styles.btn}>
               Get Started

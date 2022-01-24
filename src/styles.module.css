@@ -29,7 +29,8 @@
   }
 
   .welcomeQuote {
-margin-top: 9rem;
+margin-top: 7rem;
+width: 30%;
   }
 
 
@@ -198,10 +199,10 @@ input::placeholder {
 .gridBox {
   display: grid;
   grid-template-columns: 32% 32% 32%;
-  grid-gap: 3%;
+  grid-gap: 2%;
   justify-content: center;
-  padding-left: 6rem;
-  padding-right: 6rem;
+  padding-left: 3rem;
+  padding-right: 3rem;
 }
 
 .eachGridBox {

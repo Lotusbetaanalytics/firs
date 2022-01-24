@@ -21,6 +21,7 @@ export const userToken = (token) => async (dispatch) => {
       type: USER_TOKEN_SUCCESS,
       payload: data,
     });
+    console.log(data, "this is from action");
 
     localStorage.setItem("getToken", JSON.stringify(data));
   } catch (error) {

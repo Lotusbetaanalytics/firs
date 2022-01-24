@@ -27,7 +27,9 @@ function EnterToken() {
   const { success, error, loading } = tokenUser;
 
   if (success) {
+    // dispatch(userToken(token));
     navigate("/gettokeninfo");
+    console.log(tokenUser);
   }
 
   return (
@@ -47,7 +49,7 @@ function EnterToken() {
           {msg && (
             <Alert status="error">
               <AlertIcon />
-              Enter Token
+              Please Enter Token
             </Alert>
           )}
           {success && (
