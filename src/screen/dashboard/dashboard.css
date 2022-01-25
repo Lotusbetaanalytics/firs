@@ -1,0 +1,57 @@
+.container {
+  display: flex;
+  width: 95vw;
+  overflow: hidden;
+}
+
+.dashboard__navbar {
+  position: fixed;
+  width: 15vw;
+  height: 100vh;
+  border: 1px solid red;
+}
+
+.dashboard__container {
+  display: flex;
+  flex-direction: column;
+  width: 80vw;
+  height: 100vh;
+  margin-left: 210px;
+}
+
+.dashboard__title__cards {
+  width: 100%;
+  /* border: 1px solid blue; */
+  padding: 0.5rem 1rem;
+}
+
+.cards {
+  display: grid;
+  grid-template-columns: auto auto auto auto;
+  grid-gap: 8px;
+  padding: 8px;
+  width: 100%;
+}
+
+.dashboard__container .chart {
+  width: 27%;
+  margin: 0 auto;
+}
+
+@media screen and (max-width: 768px) {
+  .dashboard__container .chart {
+    display: none;
+  }
+
+  .cards {
+    display: grid;
+    grid-template-columns: auto;
+    grid-gap: 10px;
+    padding: 10px;
+    width: 100%;
+  }
+
+  .dashboard__container {
+    margin-left: 60px;
+  }
+}
