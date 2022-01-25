@@ -3,7 +3,6 @@ import DashboardCard from "../../components/DashboardCard/DashboardCard";
 import PageTitle from "../../components/PageTitle/Pagetitle";
 import Chart from "../../components/Chart/Chart";
 import Navbar from "../../components/Navbar/Navbar";
-// import { useSelector } from "react-redux";
 import { useDispatch } from "react-redux";
 import {
   FaWalking,
@@ -17,6 +16,7 @@ import {
 } from "react-icons/fa";
 import "./dashboard.css";
 import { getDashboard } from "../../redux/actions/dashboardActions/dashboard.actions";
+import { useSelector } from "react-redux";
 const Dashboard = () => {
   const [visitorsToday, setVisitorsToday] = useState(null);
   const [allStaff, setAllStaff] = useState(null);
@@ -28,9 +28,15 @@ const Dashboard = () => {
 
   const dashboardData = JSON.parse(localStorage.getItem("dashboard"));
 
+  // eslint-disable-next-line no-unused-vars
+  const state = useSelector((state) => {
+    return state;
+  });
+
   const dispatch = useDispatch();
 
   useEffect(() => {
+    console.log("hello");
     if (!dashboardData) {
       dispatch(getDashboard());
     } else {
@@ -42,6 +48,7 @@ const Dashboard = () => {
       setCheckedOut(dashboardData.data.todaysCheckedOutPrebooks.length);
       setPendingVisitors(dashboardData.data.todaysPendingPrebooks.length);
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [dashboardData, dispatch]);
   return (
     <div className="container">
@@ -50,7 +57,7 @@ const Dashboard = () => {
       </div>
       <div className="dashboard__container">
         <div className="dashboard__title__cards">
-          <PageTitle heading="See what your Dashboard looks like today!" />
+          <PageTitle heading="See what your Dashboard looks like today." />
           <div className="cards">
             <DashboardCard
               number={visitorsToday}

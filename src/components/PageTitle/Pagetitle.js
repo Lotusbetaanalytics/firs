@@ -5,12 +5,12 @@ const PageTitle = (props) => {
 
   let greeting = "";
 
-  if (date.getHours() >= 12 || date.getHours() <= 16) {
+  if (date.getHours() === 12 || date.getHours() <= 16) {
     greeting = "Good Afternoon!";
-  } else if (date.getHours() >= 5 && date.getHours() <= 11) {
-    greeting = "Good Morning!";
-  } else {
+  } else if (date.getHours() === 17 || date.getHours() <= 22) {
     greeting = "Good Evening!";
+  } else {
+    greeting = "Good Morning!";
   }
   return (
     <div className="page__heading">
