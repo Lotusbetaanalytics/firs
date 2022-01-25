@@ -22,7 +22,7 @@ export default function DoughChart(props) {
           props.checkedout,
           props.allVisitors,
         ],
-        backgroundColor: ["green", "purple", "yellow", "teal"],
+        backgroundColor: ["green", "blue", "purple", "yellow", "teal"],
         border: 1,
       },
     ],
