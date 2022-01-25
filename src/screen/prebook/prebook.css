@@ -13,7 +13,7 @@
   margin: 0 auto;
   width: 80%;
   height: 10vh;
-  border: 1px solid maroon;
+  /* border: 1px solid maroon; */
 }
 
 .MuiOutlinedInput-input:focus {

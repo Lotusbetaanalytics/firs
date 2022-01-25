@@ -1,6 +1,7 @@
 .container {
   display: flex;
   width: 95vw;
+  overflow: hidden;
 }
 
 .dashboard__navbar {
@@ -21,19 +22,19 @@
 .dashboard__title__cards {
   width: 100%;
   /* border: 1px solid blue; */
-  padding: 1rem;
+  padding: 0.5rem 1rem;
 }
 
 .cards {
   display: grid;
   grid-template-columns: auto auto auto auto;
-  grid-gap: 10px;
-  padding: 10px;
+  grid-gap: 8px;
+  padding: 8px;
   width: 100%;
 }
 
 .dashboard__container .chart {
-  width: 35%;
+  width: 27%;
   margin: 0 auto;
 }
 

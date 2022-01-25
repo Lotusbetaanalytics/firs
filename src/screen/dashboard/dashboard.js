@@ -3,7 +3,7 @@ import DashboardCard from "../../components/DashboardCard/DashboardCard";
 import PageTitle from "../../components/PageTitle/Pagetitle";
 import Chart from "../../components/Chart/Chart";
 import Navbar from "../../components/Navbar/Navbar";
-import { useSelector } from "react-redux";
+// import { useSelector } from "react-redux";
 import { useDispatch } from "react-redux";
 import {
   FaWalking,
@@ -18,7 +18,6 @@ import {
 import "./dashboard.css";
 import { getDashboard } from "../../redux/actions/dashboardActions/dashboard.actions";
 const Dashboard = () => {
-  const { data } = useSelector((state) => state.dashboard);
   const [visitorsToday, setVisitorsToday] = useState(null);
   const [allStaff, setAllStaff] = useState(null);
   const [allAdmin, setAllAdmin] = useState(null);
@@ -27,27 +26,23 @@ const Dashboard = () => {
   const [checkedOut, setCheckedOut] = useState(null);
   const [pendingVisitors, setPendingVisitors] = useState(null);
 
-  const dispatch = useDispatch();
-  useEffect(() => {
-    dispatch(getDashboard());
-    setVisitorsToday(data.data.todaysPrebooks.length);
-    setPreBookedGuests(data.data.allPrebooks.length);
-    setAllStaff(data.data.allStaff.length);
-    setAllAdmin(data.data.allAdmin.length);
-    setCheckedIn(data.data.todaysCheckedInPrebooks.length);
-    setCheckedOut(data.data.todaysCheckedOutPrebooks.length);
-    setPendingVisitors(data.data.todaysPendingPrebooks.length);
+  const dashboardData = JSON.parse(localStorage.getItem("dashboard"));
 
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [
-    visitorsToday,
-    preBookedGuests,
-    pendingVisitors,
-    checkedIn,
-    checkedOut,
-    allStaff,
-    allAdmin,
-  ]);
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    if (!dashboardData) {
+      dispatch(getDashboard());
+    } else {
+      setVisitorsToday(dashboardData.data.todaysPrebooks.length);
+      setPreBookedGuests(dashboardData.data.allPrebooks.length);
+      setAllStaff(dashboardData.data.allStaff.length);
+      setAllAdmin(dashboardData.data.allAdmin.length);
+      setCheckedIn(dashboardData.data.todaysCheckedInPrebooks.length);
+      setCheckedOut(dashboardData.data.todaysCheckedOutPrebooks.length);
+      setPendingVisitors(dashboardData.data.todaysPendingPrebooks.length);
+    }
+  }, [dashboardData, dispatch]);
   return (
     <div className="container">
       <div>
@@ -55,7 +50,7 @@ const Dashboard = () => {
       </div>
       <div className="dashboard__container">
         <div className="dashboard__title__cards">
-          <PageTitle heading="Dashboard" />
+          <PageTitle heading="See what your Dashboard looks like today!" />
           <div className="cards">
             <DashboardCard
               number={visitorsToday}

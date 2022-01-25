@@ -1,8 +1,8 @@
 import React from "react";
-import { Chart as ChartJS, ArcElement, Tooltip, Legend } from "chart.js";
+import { Chart as ChartJS, ArcElement, Tooltip } from "chart.js";
 import { Doughnut } from "react-chartjs-2";
 
-ChartJS.register(ArcElement, Tooltip, Legend);
+ChartJS.register(ArcElement, Tooltip);
 
 export default function DoughChart(props) {
   const data = {
@@ -22,12 +22,7 @@ export default function DoughChart(props) {
           props.checkedout,
           props.allVisitors,
         ],
-        backgroundColor: [
-          "Teal",
-          "rgba(54, 162, 235)",
-          "rgba(255, 206, 86)",
-          "rgba(75, 192, 192)",
-        ],
+        backgroundColor: ["green", "purple", "yellow", "teal"],
         border: 1,
       },
     ],
