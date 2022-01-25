@@ -2,8 +2,9 @@ import { Alert, AlertIcon, Button, useToast } from "@chakra-ui/react";
 import { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import {Link, useNavigate } from "react-router-dom";
-import { adminForgetpassword } from "../redux/actions_/adminActions";
+import { adminForgetpassword } from "../../redux/actions_/adminActions";
 import styles from "./styles.module.css";
+import Input from '../../component/Input/input';
 
 const AdminForgot = () => {
     const navigate = useNavigate();
@@ -44,15 +45,19 @@ const AdminForgot = () => {
 
             <div className={styles.mdForm}>
             <form onSubmit={loginHandler}>
-              <div className={styles.inputContainer_}>
+              {/* <div className={styles.inputContainer_}>
                 <label>Email Address</label>
                 <input
                   type="email"
                   onChange={(e) => setEmail(e.target.value)}
                   value={email}
                 />
-              </div>
-              <span className={styles.forget}><Link to="/login">Remember your Password?</Link></span>
+              </div> */}
+              <Input  label={`Email`}
+                    type={`text`}
+                    onChange={(e)=>setEmail(e.target.value)}
+                    value={email}/>
+              <span className={styles.forget2}><Link to="/login">Remember your Password?</Link></span>
               <div className={styles.inputContainer_}>
                 <label style={{ visibility: "hidden" }}>Login</label>
                 {success && (

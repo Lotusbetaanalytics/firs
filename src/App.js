@@ -3,10 +3,10 @@ import Header from "./component/Header";
 import { Routes } from "react-router-dom";
 import { Route } from "react-router-dom";
 import { BrowserRouter } from "react-router-dom";
-import Login from "./screen/login";
-import Register from "./screen/register";
-import Log from "./screen/log";
-import AdminForgot from "./screen/adminForgot";
+import Login from "./screen/adminScreens/login";
+import Register from "./screen/adminScreens/register";
+import Log from "./screen/adminScreens/log";
+import AdminForgot from "./screen/adminScreens/adminForgot";
 
 const App = () => {
   return (

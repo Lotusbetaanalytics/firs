@@ -4,9 +4,10 @@ import styles from "./styles.module.css";
 import { Alert, AlertIcon, useToast, Button } from "@chakra-ui/react";
 import { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { ADMIN_LOGIN_RESET } from '../redux/constants_/adminConstants';
+import { ADMIN_LOGIN_RESET } from '../../redux/constants_/adminConstants';
 import { useEffect } from 'react';
-import { loginAdmin } from '../redux/actions_/adminActions';
+import { loginAdmin } from '../../redux/actions_/adminActions';
+import Input from './../../component/Input/input';
 
 
 const Login = () => {
@@ -58,24 +59,16 @@ const Login = () => {
           )}
           <div className={styles.mdForm}>
           <form onSubmit={loginHandler}>
-            <div className={styles.inputContainer_}>
-              <label>Email Address</label>
-              <input
-                type="email"
-                onChange={(e) => setEmail(e.target.value)}
-                value={email}
-              />
-            </div>
-            <div className={styles.inputContainer_}>
-              <label>Password</label>
-              <input
-                type="password"
-                onChange={(e) => setPassword(e.target.value)}
-                value={password}
-              />
-            </div>
+            <Input  label={`Email`}
+                    type={`text`}
+                    onChange={(e)=>setEmail(e.target.value)}
+                    value={email}/>
+            <Input  label={`Password`}
+                    type={`password`}
+                    onChange={(e)=>setPassword(e.target.value)}
+                    value={password}/>
             <span className={styles.forget}><Link to="/adminForgot">Forgot Password?</Link></span> 
-            <div className={styles.inputContainer_}>
+            <div className={styles.inputContainer2_}>
               <label style={{ visibility: "hidden" }}>Login</label>
               {loading ? (
                 <Button
@@ -94,7 +87,7 @@ const Login = () => {
                 />
               )}
             </div>
-            <div className={styles.text2}>Don't Have an account? <Link to="/register">Register</Link>
+            <div className={styles.text2}>Don't Have an account? <Link to="/register"> Register </Link>
             </div>
           </form>
           </div>

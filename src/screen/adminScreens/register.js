@@ -5,8 +5,9 @@ import styles from "./styles.module.css";
 import { Alert, AlertIcon, useToast, Button } from "@chakra-ui/react";
 import { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { ADMIN_LOGIN_RESET, ADMIN_REGISTRATION_RESET } from '../redux/constants_/adminConstants';
-import { registerAdmin } from '../redux/actions_/adminActions';
+import { ADMIN_LOGIN_RESET, ADMIN_REGISTRATION_RESET } from '../../redux/constants_/adminConstants';
+import { registerAdmin } from '../../redux/actions_/adminActions';
+import Input from '../../component/Input/input';
 
 
 const Register = () => {
@@ -121,79 +122,52 @@ const Register = () => {
             </Alert>
           )}
           <form onSubmit={registerHandler} className={styles.form2}>
-          <div className={styles.inputContainer2_}>
-              <label>First Name</label>
-              <input
-                type="text"
-                onChange={(e) => setFirstName(e.target.value)}
-                value={firstName}
-              />
-            </div>
-            <div className={styles.inputContainer2_}>
-              <label>Last Name</label>
-              <input
-                type="text"
-                onChange={(e) => setLastName(e.target.value)}
-                value={lastName}
-              />
-            </div>
-            <div className={styles.inputContainer2_}>
-              <label>Email Address</label>
-              <input
-                type="email"
-                onChange={(e) => setEmail(e.target.value)}
-                value={email}
-              />
-            </div>
-            <div className={styles.inputContainer2_}>
-              <label>Phone Number</label>
-              <input
-                type="Tel"
-                onChange={(e) => setPhoneNumber(e.target.value)}
-                value={phoneNumber}
-              />
-            </div>
+              <Input  label={`First Name`}
+                    type={`text`}
+                    onChange={(e)=>setFirstName(e.target.value)}
+                    value={firstName}/>
             
-            <div className={styles.inputContainer2_}>
-              <label>Department</label>
-              <input
-                type="text"
-                onChange={(e) => setDepartment(e.target.value)}
-                value={department}
-              />
-            </div>
-            <div className={styles.inputContainer2_}>
-              <label>Office floor</label>
-              <input
-                type="text"
-                onChange={(e) => setFloor(e.target.value)}
-                value={floor}
-              />
-            </div>
-            <div className={styles.inputContainer2_}>
-              <label>Office Number</label>
-              <input
-                type="number"
-                onChange={(e) => setOfficeNumber(e.target.value)}
-                value={officeNumber}
-              />
-            </div>
-            <div className={styles.inputContainer2_}>
-              <label>Password</label>
-              <input
-                type="password"
-                onChange={(e) => setPassword(e.target.value)}
-                value={password}
-              />
-            </div>
-            <div className={styles.inputContainer2_}>
-              <label>Confirm Password</label>
-              <input
-                type="password"
-                onChange={(e) => setConfirmPassword(e.target.value)}
-                value={confirmPassword}
-              />
-            </div>
+            
+            <Input  label={`Last Name`}
+                    type={`text`}
+                    onChange={(e)=>setLastName(e.target.value)}
+                    value={lastName}/>
+            
+            <Input  label={`Email Address`}
+                    type={`text`}
+                    onChange={(e)=>setEmail(e.target.value)}
+                    value={email}/>
+
+            <Input  label={`Phone Number`}
+                    type={`Tel`}
+                    onChange={(e)=>setPhoneNumber(e.target.value)}
+                    value={phoneNumber}/>
+
+            <Input  label={`Department`}
+                    type={`text`}
+                    onChange={(e)=>setDepartment(e.target.value)}
+                    value={department}/>
+            
+              <Input  label={`Office Floor`}
+                    type={`number`}
+                    onChange={(e)=>setFloor(e.target.value)}
+                    value={floor}/>
+            
+            
+            <Input  label={`Office Number`}
+                    type={`number`}
+                    onChange={(e)=>setOfficeNumber(e.target.value)}
+                    value={officeNumber}/>
+            
+            <Input  label={`Password`}
+                    type={`password`}
+                    onChange={(e)=>setPassword(e.target.value)}
+                    value={password}/>
+            
+            <Input  label={`Confirm Password`}
+                    type={password}
+                    onChange={(e)=>setConfirmPassword(e.target.value)}
+                    value={confirmPassword}/>
             <div className={styles.inputContainer2_}>
               <label style={{ visibility: "hidden" }}>Register</label>
               {loading ? (
@@ -213,7 +187,7 @@ const Register = () => {
                 />
               )}
             </div>
-            <div className={`${styles.inputContainer_3} ${styles.center}`}>
+            <div className={`${styles.inputContainer_} ${styles.center}`}>
             <div>
             Have an account? <Link to="/login">Log in</Link>
             </div>

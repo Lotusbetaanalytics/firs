@@ -23,10 +23,11 @@
 .inputContainer_3 {
   display: grid;
   justify-content: center;
-  width: 200%;
-  min-height: 100%;
+  width: 100%;
+  height: 3.5rem;
   padding: 2px 5%;
   margin-bottom: 10px;
+  margin-top: 10px;
 }
 
 .inputContainer_ {
@@ -37,26 +38,18 @@
   padding: 2px 5%;
   margin-bottom: 10px;
 }
-.inputContainer2_ {
+.inputContainer_ {
   display: grid;
   width: 100%;
-  min-height: 100%;
+  height: 3.5rem;
   padding: 2px 5%;
   margin-bottom: 10px;
 }
-.inputContainer_ input {
-  width: 100%;
-  height: 3.5rem;
-  padding: 0.5rem 2rem;
-  display: block;
-  border: 1px solid gainsboro;
-  border-radius: 5px;
-  outline: none;
-}
+
 .inputContainer2_ input {
   width: 100%;
   height: 3.5rem;
-  padding: 0.5rem 2rem;
+  padding: 0.5rem 1rem;
   display: block;
   border: 1px solid gainsboro;
   border-radius: 5px;
@@ -87,6 +80,15 @@
   font-size: 14px;
   padding: 0 2%;
 }
+.forget2 {
+  display: flex;
+  width: 60%;
+  margin-left: auto;
+  margin-top: 0px;
+  font-size: 14px;
+  padding: 0 2%;
+}
+
 .border {
   border-radius: 25px;
 }
@@ -126,18 +128,20 @@
     font-size: 12px;
     padding-top: 0;
   }
-  .microsoft {
-    font-size: 12px;
+  .forget2 {
+    display: flex;
+    width: 100%;
+    justify-content: center;
   }
-  .micro {
-    height: 40px;
-    width: 40px;
-    margin-left: 10px;
-    padding: 2%;
-  }
+
   .text2 {
     font-size: 12px;
   }
+  /* .text3 {
+    font-size: 12px;
+    width: 80%;
+    display: flex;
+  } */
   .inputContainer_ input {
     padding: 0.5rem 1rem;
   }
