@@ -20,7 +20,7 @@
   height: 100%;
   width: 300%;
 }
-.inputContainer_3 {
+/* .inputContainer_3 {
   display: grid;
   justify-content: center;
   width: 100%;
@@ -28,7 +28,7 @@
   padding: 2px 5%;
   margin-bottom: 10px;
   margin-top: 10px;
-}
+} */
 
 .inputContainer_ {
   display: flex;

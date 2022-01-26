@@ -35,11 +35,6 @@ ul li {
   color: #ab262a;
 }
 
-.name {
-  display: flex;
-  justify-content: space-between;
-  color: black;
-}
 .center {
   margin: 20px;
 }
