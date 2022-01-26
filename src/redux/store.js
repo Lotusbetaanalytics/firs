@@ -3,6 +3,7 @@
 // import { composeWithDevTools } from "redux-devtools-extension";
 // import { uesrTokenReducer } from "./reducers/TokenReducer";
 import { configureStore } from "@reduxjs/toolkit";
+import { rootReducer } from "./reducers/index";
 
 // const reducer = combineReducers({
 //   tokenUser: uesrTokenReducer,
@@ -24,12 +25,7 @@ const initialState = {
 //   composeWithDevTools(applyMiddleware(...middleware))
 // );
 
-
-
-import { rootReducer } from "./reducers/index";
-
 const store = configureStore({ reducer: rootReducer }, initialState);
 // The store now has redux-thunk added and the Redux DevTools Extension is turned on
-
 
 export default store;
