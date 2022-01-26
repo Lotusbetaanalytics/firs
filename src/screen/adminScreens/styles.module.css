@@ -1,0 +1,216 @@
+/* * {
+  outline: solid tomato;
+} */
+.customPadding_ {
+  padding: 2rem 5%;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+.center {
+  display: grid;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  width: 300%;
+}
+.inputContainer_3 {
+  display: grid;
+  justify-content: center;
+  width: 100%;
+  height: 3.5rem;
+  padding: 2px 5%;
+  margin-bottom: 10px;
+  margin-top: 10px;
+}
+
+.inputContainer_ {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  min-height: 100%;
+  padding: 2px 5%;
+  margin-bottom: 10px;
+}
+.inputContainer_ {
+  display: grid;
+  width: 100%;
+  height: 3.5rem;
+  padding: 2px 5%;
+  margin-bottom: 10px;
+}
+
+.inputContainer2_ input {
+  width: 100%;
+  height: 3.5rem;
+  padding: 0.5rem 1rem;
+  display: block;
+  border: 1px solid gainsboro;
+  border-radius: 5px;
+  outline: none;
+}
+.form2 {
+  display: grid;
+  width: 80%;
+  grid-template-columns: 48% 48%;
+  height: auto;
+  border-radius: 20px;
+  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+  padding: 5%;
+}
+.mdForm {
+  background-color: white;
+  width: 40%;
+  height: auto;
+  padding: 5%;
+  border-radius: 20px;
+  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+}
+.forget {
+  display: flex;
+  width: 42%;
+  margin-left: auto;
+  margin-top: 0px;
+  font-size: 14px;
+  padding: 0 2%;
+}
+.forget2 {
+  display: flex;
+  width: 60%;
+  margin-left: auto;
+  margin-top: 0px;
+  font-size: 14px;
+  padding: 0 2%;
+}
+
+.border {
+  border-radius: 25px;
+}
+.marginTop {
+  margin-top: -20px;
+}
+.whiteBG {
+  background-color: white;
+  color: rgb(92, 224, 80);
+}
+.green {
+  background-color: #ab262a;
+  color: white;
+}
+
+.paddingTp {
+  padding-top: 10px;
+}
+.text2 {
+  display: flex;
+  margin-top: 20px;
+  align-items: center;
+  justify-content: center;
+}
+
+/* media query */
+
+/* phone-only */
+@media (max-width: 599px) {
+  .mdForm {
+    width: 100%;
+    padding-top: 10%;
+    min-height: 70vh;
+  }
+  .forget {
+    min-width: 57%;
+    font-size: 12px;
+    padding-top: 0;
+  }
+  .forget2 {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+  }
+
+  .text2 {
+    font-size: 12px;
+  }
+  /* .text3 {
+    font-size: 12px;
+    width: 80%;
+    display: flex;
+  } */
+  .inputContainer_ input {
+    padding: 0.5rem 1rem;
+  }
+  .form2 {
+    display: grid;
+    width: 100%;
+    grid-template-columns: 100%;
+    height: auto;
+    border-radius: 20px;
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+    padding-top: 10%;
+    margin-top: 5%;
+  }
+  .inputContainer_3 {
+    display: grid;
+    justify-content: center;
+    width: 100%;
+    font-size: 14px;
+  }
+}
+
+/* .tablet-portrait-up  */
+@media (min-width: 600px) {
+}
+
+/* tablet-portait-only */
+@media (min-width: 600px) and (max-width: 899px) {
+  .mdForm {
+    width: 75%;
+    padding-top: 10%;
+    min-height: 70vh;
+  }
+}
+
+/* tablet-landscape-up */
+@media (min-width: 900px) {
+  .mdForm {
+    width: 60%;
+    min-height: 70vh;
+  }
+}
+
+/* tablet-landscape-only */
+@media (min-width: 900px) and (max-width: 1199px) {
+  .mdForm {
+    width: 50%;
+    min-height: 70vh;
+  }
+}
+
+@media (min-width: 1025px) and (max-width: 1280px) {
+}
+
+/* .desktop-up */
+@media (min-width: 1300px) {
+}
+
+/* desktop-only */
+@media (min-width: 1300px) and (max-width: 1799px) {
+  .mdForm {
+    width: 40%;
+    min-height: 70vh;
+  }
+}
+
+/* big-desktop-up */
+@media (min-width: 1800px) {
+  .mdForm {
+    width: 40%;
+    min-height: 70vh;
+  }
+}
