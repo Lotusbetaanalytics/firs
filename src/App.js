@@ -1,5 +1,4 @@
 import React from "react";
-import Header from "./component/Header";
 import Login from "./screen/adminScreens/login";
 import Register from "./screen/adminScreens/register";
 import Log from "./screen/adminScreens/log";
@@ -16,7 +15,6 @@ import Prebook from "./screen/prebook/prebook";
 const App = () => {
   return (
     <Router>
-      <Header />
       <Routes>
         <Route path="/" element={<HomePage />} />
         <Route path="/entertoken" element={<EnterToken />} />
@@ -26,7 +24,7 @@ const App = () => {
         <Route exact path="/admin/dashboard" element={<Dashboard />} />
         <Route path="/login" element={<Login />} />
         <Route path="/register" element={<Register />} />
-        <Route path="/log" element={<Log />} />
+        <Route path="/admin/logs" element={<Log />} />
         <Route path="/adminForgot" element={<AdminForgot />} />
         <Route exact path="/admin/prebook" element={<Prebook />} />
       </Routes>

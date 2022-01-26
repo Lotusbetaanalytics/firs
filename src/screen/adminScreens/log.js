@@ -1,12 +1,15 @@
-import React from 'react'
+import React from "react";
 import styles from "./styles.module.css";
-import { Tabletwo } from '../../component/table 2/tabletwo';
-
+import { Tabletwo } from "../../components/table 2/tabletwo";
+import Navbar from "../../components/Navbar/Navbar";
 export const Log = () => {
-    return (
-        <div className={styles.customPadding_}>
-            <Tabletwo/>
-        </div>
-    )
-}
+  return (
+    <>
+      <Navbar />
+      <div className={styles.customPadding_}>
+        <Tabletwo />
+      </div>
+    </>
+  );
+};
 export default Log;
