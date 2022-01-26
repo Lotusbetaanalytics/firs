@@ -22,7 +22,6 @@ function TokenDetails() {
   const [timeOut, setTimeOut] = useState("");
   const [status, setStatus] = useState("");
 
-  const checkedIn = () => {};
   const user = JSON.parse(localStorage.getItem("getToken"));
 
   useEffect(() => {
@@ -44,11 +43,11 @@ function TokenDetails() {
     }
   }, [navigate]);
 
-  useEffect(() => {
-    if (user.data.status === checkedIn) {
-      navigate("/checkoutsuccess");
-    }
-  }, [user.data.status, navigate]);
+  // useEffect(() => {
+  //   if (user.data.status === checkout) {
+  //     navigate("/checkoutsuccess");
+  //   }
+  // }, [user.data.status, navigate]);
 
   return (
     <div>

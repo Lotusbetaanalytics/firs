@@ -4,7 +4,7 @@ import logo from "../../assets/logo.png"
 import { Link } from 'react-router-dom'
 
 function Header() {
-    const [ user,setUser] = useState(false)
+    const [ user] = useState(false)
     const data = "fonsus"
     return (
         <div>
