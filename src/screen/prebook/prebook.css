@@ -1,0 +1,89 @@
+.Prebook__container {
+  display: flex;
+  width: 95vw;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.heading__form {
+  margin-left: 150px;
+}
+
+.prebook__pagetitle {
+  margin: 0 auto;
+  width: 80%;
+  height: 10vh;
+  /* border: 1px solid maroon; */
+}
+
+.MuiOutlinedInput-input:focus {
+  /* outline: 1px solid maroon !important; */
+  border-radius: inherit;
+}
+
+.inputfields {
+  display: grid;
+  grid-template-columns: auto auto;
+  grid-gap: 30px;
+  padding: 20px;
+  margin: 30px 80px;
+  width: 70vw;
+}
+
+.date__time {
+  display: flex;
+  flex-direction: column;
+  height: 80px;
+}
+
+.ui.animated.button {
+  margin-top: 20px;
+  padding: 20px;
+  background: maroon;
+  color: white;
+}
+
+@media screen and (max-width: 768px) {
+  .Prebook__container {
+    display: flex;
+    width: 95vw;
+    height: 100vh;
+    overflow: scroll;
+    margin: 0 auto;
+  }
+
+  .prebook__pagetitle {
+    margin-left: 18px;
+    width: 85%;
+  }
+
+  .inputfields {
+    display: grid;
+    grid-template-columns: auto;
+    grid-gap: 40px;
+    padding: 20px;
+    width: 90vw;
+    margin: 0px;
+  }
+  .heading__form {
+    margin: 0 auto;
+  }
+}
+
+@media screen and (max-width: 900px) {
+  .inputfields {
+    display: grid;
+    grid-template-columns: auto;
+    grid-gap: 30px;
+    padding: 20px;
+    margin: 70px;
+    width: 60vw;
+  }
+
+  .prebook__pagetitle {
+    margin-left: 100px;
+    width: 60%;
+    height: 10vh;
+    border: 1px solid blue;
+  }
+}
