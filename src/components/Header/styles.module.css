@@ -3,37 +3,34 @@
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
-    height: 5rem;
+    height: 6.5rem;
     color: white;
     padding: 0 5%;
     box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
     margin-bottom:5rem;
   }
-  ul {
-    display: flex;
-    flex-direction: row;
-    list-style: none;
-  }
-  ul li {
-    display: flex;
-    padding-right: 10px;
-    margin-left: 20px;
-    padding: 5px;
-    border-radius: 5px;
-    border: solid 0.5px #ab262a;
-  }
-  .green {
-    background-color: #ab262a;
-    color: white;
-  }
-  .whiteBG {
-    background-color: white;
-    color: #ab262a;
-  }
+ 
   
   .name {
     color: black;
   }
   .center {
     margin: 20px;
+  }
+
+  
+
+  .btn {
+    width: 300px;
+    height: 3rem;
+    padding-left: 4rem;
+    padding-top: 20px;
+    padding-right: 4rem;
+    padding-bottom: 1.5rem;
+    margin-left: 1rem;
+    border-radius: 10px;
+    text-align: center;
+    font-weight: bold;
+    color: aliceblue;
+    background-color: maroon
   }

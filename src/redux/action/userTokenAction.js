@@ -3,6 +3,9 @@ import {
   USER_TOKEN_REQUEST,
   USER_TOKEN_SUCCESS,
   USER_TOKEN_FAIL,
+  CHECKIN_TOKEN_REQUEST,
+  CHECKIN_TOKEN_SUCCESS,
+  CHECKIN_TOKEN_FAIL,
 } from "../constants/userTokenContants";
 
 export const userToken = (token, navigate) => async (dispatch) => {
@@ -29,6 +32,38 @@ export const userToken = (token, navigate) => async (dispatch) => {
   } catch (error) {
     dispatch({
       type: USER_TOKEN_FAIL,
+      payload:
+        error.response && error.response.data.message
+          ? error.response.data.message
+          : error.message,
+    });
+  }
+};
+
+//user successfully checked in
+export const userCheckInToken = (token, navigate) => async (dispatch) => {
+  try {
+    console.log(token);
+    dispatch({ type: CHECKIN_TOKEN_REQUEST });
+    var config = {
+      method: "put",
+      url: `https://firs-vms-backend.herokuapp.com/api/v1/prebook/${token}`,
+      headers: {
+        Authorization:
+          "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYxZTlhNmY2OTY3OWRlYjNmMjk0ZjU0NiIsImlhdCI6MTY0MzE4Njg3MiwiZXhwIjoxNjQ1Nzc4ODcyfQ.ZgfR7vXThfjcGeISSqtn8jQUQrzBYHFMQ35c2UfIKcw",
+        "Content-Type": "application/json",
+      },
+      data: {},
+    };
+    const { data } = await axios(config);
+    dispatch({
+      type: CHECKIN_TOKEN_SUCCESS,
+      payload: data,
+    });
+    navigate("/tokensuccess");
+  } catch (error) {
+    dispatch({
+      type: CHECKIN_TOKEN_FAIL,
       payload:
         error.response && error.response.data.message
           ? error.response.data.message

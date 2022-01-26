@@ -1,10 +1,11 @@
 import { createStore, combineReducers, applyMiddleware } from "redux";
 import thunk from "redux-thunk";
 import { composeWithDevTools } from "redux-devtools-extension";
-import { uesrTokenReducer } from "./reducers/TokenReducer";
+import { checkInTokenReducer, uesrTokenReducer } from "./reducers/TokenReducer";
 
 const reducer = combineReducers({
   tokenUser: uesrTokenReducer,
+  userT: checkInTokenReducer,
 });
 
 const userInfoFromStorage = localStorage.getItem("getToken")

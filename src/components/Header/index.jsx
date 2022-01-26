@@ -23,10 +23,14 @@ function Header() {
                         <p>{data}</p>
                     </div>
                 ) : ( 
-                    <ul>
-                        <li className={styles.green}>Staff Login</li>
-                            <li className={styles.whiteBG}>Admin Login</li>
-                    </ul>
+                    <div className={styles.btnContainer}>
+                        <Link to='/' className={styles.btn}>
+                        Staff Login
+                        </Link>
+                        <Link to='/' className={styles.btn}>
+                            Admin Login
+                        </Link>
+                    </div>
                     )  }
                         
             </div>
