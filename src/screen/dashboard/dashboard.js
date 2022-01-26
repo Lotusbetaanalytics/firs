@@ -36,7 +36,6 @@ const Dashboard = () => {
   const dispatch = useDispatch();
 
   useEffect(() => {
-    console.log("hello");
     if (!dashboardData) {
       dispatch(getDashboard());
     } else {
