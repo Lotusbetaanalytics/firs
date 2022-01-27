@@ -34,24 +34,26 @@ function EnterToken() {
           <div className={styles.tokenpic}>
             <img src={vectorPic} alt="Token" />
           </div>
-          {error && (
-            <Alert status="error">
-              <AlertIcon />
-              {error}
-            </Alert>
-          )}
-          {msg && (
-            <Alert status="error">
-              <AlertIcon />
-              Please Enter Token
-            </Alert>
-          )}
-          {success && (
-            <Alert status="success">
-              <AlertIcon />
-              Success
-            </Alert>
-          )}
+          <div style={{ width: "30%", marginBottom: "10px" }}>
+            {error && (
+              <Alert status="error">
+                <AlertIcon />
+                {error}
+              </Alert>
+            )}
+            {msg && (
+              <Alert status="error">
+                <AlertIcon />
+                Please Enter Token
+              </Alert>
+            )}
+            {success && (
+              <Alert status="success">
+                <AlertIcon />
+                Success
+              </Alert>
+            )}
+          </div>
 
           {loading ? (
             <Center>
