@@ -1,80 +1,81 @@
-
 .app {
-    width: 100%;
-    min-height: 100vh;
-    height: auto;
-    display:block;
-    padding: auto;
-  }
-  
-  .logo img {
-      width: 30%;
-      margin-top: 6rem;
-      margin-left: 200px;
+  width: 100%;
+  min-height: 100vh;
+  height: auto;
+  display: block;
+  padding: auto;
+}
 
-  }
-  .Tokencenter{
-    height: 100%;
-    width: 100%;
-    display:flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    padding: auto;
-  }
+.logo img {
+  width: 30%;
+  margin-top: 6rem;
+  margin-left: 200px;
+}
+.Tokencenter {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: auto;
+}
 
-  .welcome {
-    display: flex;
-    padding-bottom: 2rem;
-  }
+.welcome {
+  display: flex;
+  padding-bottom: 2rem;
+}
 
-  .welcomeQuote {
-margin-top: 7rem;
-width: 30%;
-  }
+.welcomeQuote {
+  margin-top: 7rem;
+  width: 30%;
+}
 
+.welcomeQuote h1 {
+  font-size: 3rem;
+}
 
-  .welcomeQuote h1 {
-     font-size: 3rem;
-  }
+.welcomeQuote h3 {
+  width: 50%;
+}
 
-  .welcomeQuote h3 {
-    width: 50%;
-  }
+.btn {
+  width: 300px;
+  height: 3rem;
+  padding-left: 4rem;
+  padding-top: 20px;
+  padding-right: 4rem;
+  padding-bottom: 1.5rem;
+  border-radius: 10px;
+  text-align: center;
+  font-weight: bold;
+  color: aliceblue;
+  background-color: maroon;
+}
 
-  .btn {
-    width: 300px;
-    height: 3rem;
-    padding-left: 4rem;
-    padding-top: 20px;
-    padding-right: 4rem;
-    padding-bottom: 1.5rem;
-    border-radius: 10px;
-    text-align: center;
-    font-weight: bold;
-    color: aliceblue;
-    background-color: maroon;
+.btn2:hover {
+  background-color: rgb(141, 5, 5);
+  color: aliceblue;
+}
 
-  }
+.btnContainer {
+  margin-top: 35px;
+}
 
-  .btnContainer {
-    margin-top: 35px;
-  }
-
-  .btn2 {
-    padding:1rem;
-    width: 399px;
-    border-radius: 10px;
-    font-weight: bold;
-    color: aliceblue;
-    background-color: maroon;
-    margin-top: 20px;
-  }
+.btn2 {
+  padding: 1rem;
+  width: 399px;
+  border-radius: 10px;
+  font-weight: bold;
+  color: aliceblue;
+  background-color: maroon;
+  margin-top: 20px;
+}
 
 .inputContainer {
-  display:flex;
+  display: flex;
   flex-direction: column;
-  height: auto
+  height: auto;
 }
 
 .inputContainer label {
@@ -84,27 +85,27 @@ width: 30%;
   align-items: center;
   justify-content: center;
 }
-  
 
-  .inputContainer input {
-    display:flex;
-    width: 400px;
-    height: 60px;
-    border: 2px solid maroon;
-    border-radius: 10px;
-    outline: none;
-  }
+.inputContainer input {
+  display: flex;
+  width: 400px;
+  height: 60px;
+  border: 2px solid maroon;
+  border-radius: 10px;
+  outline: none;
+  padding-left: 10px;
+}
 
-  .tokenpic {
-    width: 100%;
-    height: 200px;
-    margin-top: 20px;
-    display: flex;
-    height: auto;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-  }
+.tokenpic {
+  width: 100%;
+  height: 200px;
+  margin-top: 20px;
+  display: flex;
+  height: auto;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
 
 .tokenpic img {
   width: 25%;
@@ -114,7 +115,7 @@ width: 30%;
 /* Token Information */
 
 .inputContainer2 {
-  display:grid;
+  display: grid;
   width: 100%;
   height: auto;
   margin-bottom: 1rem;
@@ -129,16 +130,16 @@ width: 30%;
 }
 
 input::placeholder {
- margin-top: 10px;
- padding-left: 10px;
- color: gray;
+  margin-top: 10px;
+  padding-left: 10px;
+  color: gray;
 }
 
 .appform {
   width: 100%;
   min-height: 100vh;
   height: auto;
-  display:block;
+  display: block;
   padding: auto;
 }
 
@@ -152,16 +153,15 @@ input::placeholder {
   background-color: maroon;
   margin-top: 20px;
   margin-left: 40px;
-
 }
-.btnSubmit{
+.btnSubmit {
   display: grid;
   width: 200%;
 }
 
 /* success checkPage */
 
-.successcheck{
+.successcheck {
   width: 100%;
   height: 200px;
   margin-top: 20px;
@@ -173,8 +173,7 @@ input::placeholder {
   padding-top: 8rem;
 }
 
-
-.successPic img{
+.successPic img {
   width: 100%;
   height: 100%;
   border-radius: 70%;
@@ -188,16 +187,14 @@ input::placeholder {
 .gridBox {
   display: grid;
   grid-template-columns: 32% 32% 32%;
-  grid-gap: 2%;
+  grid-gap: 10px;
   justify-content: center;
-  padding-left: 3rem;
-  padding-right: 3rem;
+  padding: 10px;
 }
-
 .eachGridBox {
-display: grid;
-padding-top: 2rem;
-background-color: whitesmoke;
+  display: grid;
+  padding: 1rem;
+  background-color: whitesmoke;
 }
 
 header {
@@ -206,17 +203,15 @@ header {
 
 .btn4 {
   width: 50%;
-  height: 4rem;
-  padding-left: 4rem;
-  padding-top: 20px;
-  padding-right: 4rem;
-  padding-bottom: 2rem;
+  padding: 1rem;
   border-radius: 10px;
   text-align: center;
   font-weight: bold;
   color: aliceblue;
   background-color: maroon;
-
 }
 
-
+.bt4:hover {
+  background-color: rgb(141, 5, 5);
+  color: aliceblue;
+}

@@ -42,7 +42,7 @@ function TokenDetails() {
       setTimeOut(user.data.timeOut);
       setStatus(user.data.status);
     }
-  }, [navigate]);
+  }, [navigate, user]);
 
   // useEffect(() => {
   //   if (user.data.status === checkout) {
@@ -138,25 +138,25 @@ function TokenDetails() {
           </div>
 
           <div className={styles.btnContainer}>
-            <button
-              onClick={() =>
-                dispatch(userCheckInToken(user.data.token, navigate))
-              }
-              className={styles.btn4}
-            >
-              {user.data.status === "Pending" ? "Check In" : "Check Out"}
-            </button>
-          </div>
-
-          <div className={styles.btnContainer}>
-            <button
-              onClick={() =>
-                dispatch(userCheckOutToken(user.data.token, navigate))
-              }
-              className={styles.btn4}
-            >
-              {user.data.status === "Pending" ? "Check In" : "Check Out"}
-            </button>
+            {user.data.status === "Pending" ? (
+              <button
+                onClick={() =>
+                  dispatch(userCheckInToken(user.data.token, navigate))
+                }
+                className={styles.btn4}
+              >
+                {user.data.status === "Pending" ? "Check In" : "Check Out"}
+              </button>
+            ) : (
+              <button
+                onClick={() =>
+                  dispatch(userCheckOutToken(user.data.token, navigate))
+                }
+                className={styles.btn4}
+              >
+                {user.data.status === "Pending" ? "Check In" : "Check Out"}
+              </button>
+            )}
           </div>
         </div>
       </div>

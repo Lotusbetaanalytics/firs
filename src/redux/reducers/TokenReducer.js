@@ -19,7 +19,7 @@ import {
 // };
 
 // let tokenDetail = JSON.parse(localStorage.getItem("tokenInfo"));
-export const uesrTokenReducer = (state = {}, action) => {
+export const userTokenReducer = (state = {}, action) => {
   switch (action.type) {
     case USER_TOKEN_REQUEST:
       return { loading: true };
