@@ -118,6 +118,7 @@ const Dashboard = () => {
               number={allAdmin}
               icon={<FaUsersCog />}
               path="/admin/admins"
+              color="red"
             >
               Available Admins
             </DashboardCard>

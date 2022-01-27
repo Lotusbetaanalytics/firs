@@ -11,6 +11,11 @@
   grid-gap: 10px;
 }
 
+a:hover {
+  color: maroon !important;
+  font-style: bold;
+}
+
 @media screen and (max-width: 768px) {
   .dashboard_card_container {
     width: 65vw;
