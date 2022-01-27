@@ -6,9 +6,9 @@ import AdminForgot from "./screen/adminScreens/adminForgot";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import EnterToken from "./screens/EnterToken";
 import HomePage from "./screens/HomePage";
-import TokenInfo from "./screens/TokenInfo";
 import TokenSuccess from "./screens/TokenSuccess";
 import TokenDetails from "./screens/TokenDetails";
+import CheckOutSuccess from "./screens/CheckOutSuccess";
 import Dashboard from "./screen/dashboard/dashboard";
 import Prebook from "./screen/prebook/prebook";
 
@@ -18,9 +18,10 @@ const App = () => {
       <Routes>
         <Route path="/" element={<HomePage />} />
         <Route path="/entertoken" element={<EnterToken />} />
-        <Route path="/tokeninfo/:id" element={<TokenInfo />} />
+        <Route path="/tokensuccess" element={<TokenSuccess />} />
         <Route path="/tokensuccess" element={<TokenSuccess />} />
         <Route path="/gettokeninfo" element={<TokenDetails />} />
+        <Route path="/checkoutsuccess" element={<CheckOutSuccess />} />
         <Route exact path="/admin/dashboard" element={<Dashboard />} />
         <Route path="/login" element={<Login />} />
         <Route path="/admin/register" element={<Register />} />

@@ -59,6 +59,7 @@ ul li {
 @media (max-width: 599px) {
   .navBtn {
     display: flex;
+<<<<<<< HEAD
     justify-content: center;
     font-size: 8px;
     padding: 0.2rem;
@@ -126,3 +127,39 @@ ul li {
 /* big-desktop-up */
 @media (min-width: 1800px) {
 }
+=======
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    height: 6.5rem;
+    color: white;
+    padding: 0 5%;
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+    margin-bottom:5rem;
+  }
+ 
+  
+  .name {
+    color: black;
+  }
+  .center {
+    margin: 20px;
+  }
+
+  
+
+  .btn {
+    width: 300px;
+    height: 3rem;
+    padding-left: 4rem;
+    padding-top: 20px;
+    padding-right: 4rem;
+    padding-bottom: 1.5rem;
+    margin-left: 1rem;
+    border-radius: 10px;
+    text-align: center;
+    font-weight: bold;
+    color: aliceblue;
+    background-color: maroon
+  }
+>>>>>>> fonsus
