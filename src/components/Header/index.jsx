@@ -67,7 +67,7 @@ function Header() {
                 Staff Login
               </div>
             </Link>
-            <Link to="/login">
+            <Link to="/admin/login">
               <div className={`${styles.green} ${styles.navBtn}`}>
                 Admin Login
               </div>
