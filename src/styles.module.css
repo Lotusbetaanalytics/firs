@@ -141,6 +141,7 @@ input::placeholder {
 
 .appform {
   width: 100%;
+
   min-height: 100vh;
   height: auto;
   display: block;
@@ -190,6 +191,7 @@ input::placeholder {
 /* get all token  */
 .gridBox {
   display: grid;
+  margin-top: 20px;
   grid-template-columns: 32% 32% 32%;
   grid-gap: 10px;
   justify-content: center;

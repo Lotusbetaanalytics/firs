@@ -1,14 +1,16 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import "./pagetitle.css";
 import { useNavigate } from "react-router-dom";
 const PageTitle = (props) => {
+  const [name, setName] = useState("");
   const adminToken = JSON.parse(localStorage.getItem("adminInfo"));
 
   const navigate = useNavigate();
   useEffect(() => {
-    console.log(adminToken);
     if (!adminToken) {
       navigate("/admin/login");
+    } else {
+      setName(adminToken.user.firstName);
     }
   }, [navigate, adminToken]);
   const date = new Date();
@@ -24,7 +26,9 @@ const PageTitle = (props) => {
   }
   return (
     <div className="page__heading">
-      <h1>{greeting}</h1>
+      <h1>
+        {greeting} {name}
+      </h1>
       <h3>{props.heading}</h3>
     </div>
   );

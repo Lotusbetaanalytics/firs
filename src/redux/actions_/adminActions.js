@@ -1,23 +1,35 @@
-import { ADMIN_CHANGE_PASSWORD_FAIL,
-     ADMIN_CHANGE_PASSWORD_REQUEST, 
-     ADMIN_CHANGE_PASSWORD_SUCCESS, 
-     ADMIN_DETAILS_FAIL, 
-     ADMIN_DETAILS_REQUEST, 
-     ADMIN_DETAILS_SUCCESS, 
-     ADMIN_FORGET_PASSWORD_FAIL, 
-     ADMIN_FORGET_PASSWORD_REQUEST, 
-     ADMIN_FORGET_PASSWORD_SUCCESS, 
-     ADMIN_LOGIN_FAIL, 
-     ADMIN_LOGIN_REQUEST, 
-     ADMIN_LOGIN_SUCCESS, 
-     ADMIN_LOGOUT, 
-     ADMIN_REGISTRATION_FAIL, 
-     ADMIN_REGISTRATION_REQUEST, 
-     ADMIN_REGISTRATION_SUCCESS } from "../constants_/adminConstants";
-     import axios from "axios";
+import {
+  ADMIN_CHANGE_PASSWORD_FAIL,
+  ADMIN_CHANGE_PASSWORD_REQUEST,
+  ADMIN_CHANGE_PASSWORD_SUCCESS,
+  ADMIN_DETAILS_FAIL,
+  ADMIN_DETAILS_REQUEST,
+  ADMIN_DETAILS_SUCCESS,
+  ADMIN_FORGET_PASSWORD_FAIL,
+  ADMIN_FORGET_PASSWORD_REQUEST,
+  ADMIN_FORGET_PASSWORD_SUCCESS,
+  ADMIN_LOGIN_FAIL,
+  ADMIN_LOGIN_REQUEST,
+  ADMIN_LOGIN_SUCCESS,
+  ADMIN_LOGOUT,
+  ADMIN_REGISTRATION_FAIL,
+  ADMIN_REGISTRATION_REQUEST,
+  ADMIN_REGISTRATION_SUCCESS,
+} from "../constants_/adminConstants";
+import axios from "axios";
 
 export const registerAdmin =
-  (firstName, lastName, phoneNumber, email, password, department,floor,officeNumber,isAdmin) =>
+  (
+    firstName,
+    lastName,
+    phoneNumber,
+    email,
+    password,
+    department,
+    floor,
+    officeNumber,
+    isAdmin
+  ) =>
   async (dispatch) => {
     try {
       dispatch({ type: ADMIN_REGISTRATION_REQUEST });
@@ -38,7 +50,7 @@ export const registerAdmin =
           department,
           floor,
           officeNumber,
-          isAdmin
+          isAdmin,
         },
         config
       );
@@ -90,8 +102,9 @@ export const loginAdmin = (email, password) => async (dispatch) => {
   }
 };
 
-export const adminLogout = () => (dispatch) => {
+export const adminLogout = (navigate) => (dispatch) => {
   localStorage.removeItem("adminInfo");
+  // navigate("/admin/login");
   dispatch({
     type: ADMIN_LOGOUT,
   });

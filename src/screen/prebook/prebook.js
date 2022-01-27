@@ -31,8 +31,8 @@ const Prebook = () => {
 
   const handleSubmit = (event, ...state) => {
     event.preventDefault();
-    let localTime = new Date();
-    setTime(localTime.toLocaleTimeString());
+
+    setTime(time);
     dispatch(preBookGuest(...state));
     setName("");
     setDate("");

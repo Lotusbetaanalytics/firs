@@ -8,11 +8,18 @@ import {
 export const getDashboard = () => {
   return async (dispatch) => {
     try {
+      const getAdminToken = JSON.parse(localStorage.getItem("adminInfo"));
       dispatch({
         type: GET_DASHBOARD,
       });
       const res = await axios.get(
-        "https://firs-vms-backend.herokuapp.com/api/v1/logs"
+        "https://firs-vms-backend.herokuapp.com/api/v1/logs",
+        {
+          headers: {
+            contentType: "application/json",
+            Authorization: `Bearer ${getAdminToken.token}`,
+          },
+        }
       );
 
       localStorage.setItem("dashboard", JSON.stringify(res.data));

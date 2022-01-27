@@ -3,7 +3,6 @@ import DashboardCard from "../../components/DashboardCard/DashboardCard";
 import PageTitle from "../../components/PageTitle/Pagetitle";
 import Chart from "../../components/Chart/Chart";
 import Navbar from "../../components/Navbar/Navbar";
-import { useNavigate } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import {
   FaWalking,
@@ -33,16 +32,6 @@ const Dashboard = () => {
   const state = useSelector((state) => {
     return state;
   });
-
-  const adminToken = JSON.parse(localStorage.getItem("adminInfo"));
-
-  const navigate = useNavigate();
-  useEffect(() => {
-    console.log(adminToken);
-    if (!adminToken) {
-      navigate("/admin/login");
-    }
-  }, [navigate, adminToken]);
 
   const dispatch = useDispatch();
 
