@@ -5,6 +5,7 @@ import styles from "../styles.module.css";
 import { useState } from "react";
 import { useDispatch } from "react-redux";
 import { userCheckInToken } from "../redux/action/userTokenAction";
+import { userCheckOutToken } from "../redux/action/userTokenAction";
 
 function TokenDetails() {
   let navigate = useNavigate();
@@ -140,6 +141,17 @@ function TokenDetails() {
             <button
               onClick={() =>
                 dispatch(userCheckInToken(user.data.token, navigate))
+              }
+              className={styles.btn4}
+            >
+              {user.data.status === "Pending" ? "Check In" : "Check Out"}
+            </button>
+          </div>
+
+          <div className={styles.btnContainer}>
+            <button
+              onClick={() =>
+                dispatch(userCheckOutToken(user.data.token, navigate))
               }
               className={styles.btn4}
             >

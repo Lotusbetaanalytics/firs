@@ -6,6 +6,9 @@ import {
   CHECKIN_TOKEN_REQUEST,
   CHECKIN_TOKEN_SUCCESS,
   CHECKIN_TOKEN_FAIL,
+  CHECKOUT_TOKEN_REQUEST,
+  CHECKOUT_TOKEN_SUCCESS,
+  CHECKOUT_TOKEN_FAIL,
 } from "../constants/userTokenContants";
 
 // const initialState = {
@@ -57,6 +60,32 @@ export const checkInTokenReducer = (state = { puttoken: [] }, action) => {
         error: false,
       };
     case CHECKIN_TOKEN_FAIL:
+      return {
+        success: false,
+        loading: false,
+        error: action.payload,
+      };
+    default:
+      return state;
+  }
+};
+
+export const checkOutTokenReducer = (state = { puttoken: [] }, action) => {
+  switch (action.type) {
+    case CHECKOUT_TOKEN_REQUEST:
+      return {
+        ...state,
+        puttoken: state.puttoken.filter((x) => x.token === action.payload),
+        loading: true,
+      };
+    case CHECKOUT_TOKEN_SUCCESS:
+      return {
+        loading: false,
+        success: true,
+        checkOutToken: action.payload.data,
+        error: false,
+      };
+    case CHECKOUT_TOKEN_FAIL:
       return {
         success: false,
         loading: false,

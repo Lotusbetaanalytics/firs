@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import styles from './styles.module.css'
 import logo from "../../assets/logo.png"
 import { Link } from 'react-router-dom'
+import Buttons from '../Buttons'
 
 function Header() {
     const [ user] = useState(false)
@@ -24,6 +25,7 @@ function Header() {
                     </div>
                 ) : ( 
                     <div className={styles.btnContainer}>
+                        {/* <Buttons text='Check In' /> */}
                         <Link to='/' className={styles.btn}>
                         Staff Login
                         </Link>
