@@ -45,14 +45,13 @@ export const userToken = (token, navigate) => async (dispatch) => {
 //user successfully checked in
 export const userCheckInToken = (token, navigate) => async (dispatch) => {
   try {
-    console.log(token);
     dispatch({ type: CHECKIN_TOKEN_REQUEST });
+    const adminToken = JSON.parse(localStorage.getItem("adminInfo"));
     var config = {
       method: "put",
       url: `https://firs-vms-backend.herokuapp.com/api/v1/prebook/${token}`,
       headers: {
-        Authorization:
-          "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYxZTlhNmY2OTY3OWRlYjNmMjk0ZjU0NiIsImlhdCI6MTY0MzE4Njg3MiwiZXhwIjoxNjQ1Nzc4ODcyfQ.ZgfR7vXThfjcGeISSqtn8jQUQrzBYHFMQ35c2UfIKcw",
+        Authorization: `Bearer ${adminToken.token}`,
         "Content-Type": "application/json",
       },
       data: {},
@@ -76,14 +75,13 @@ export const userCheckInToken = (token, navigate) => async (dispatch) => {
 
 export const userCheckOutToken = (token, navigate) => async (dispatch) => {
   try {
-    console.log(token);
+    const adminToken = JSON.parse(localStorage.getItem("adminInfo"));
     dispatch({ type: CHECKOUT_TOKEN_REQUEST });
     var config = {
       method: "put",
       url: `https://firs-vms-backend.herokuapp.com/api/v1/prebook/${token}`,
       headers: {
-        Authorization:
-          "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYxZTlhNmY2OTY3OWRlYjNmMjk0ZjU0NiIsImlhdCI6MTY0MzE4Njg3MiwiZXhwIjoxNjQ1Nzc4ODcyfQ.ZgfR7vXThfjcGeISSqtn8jQUQrzBYHFMQ35c2UfIKcw",
+        Authorization: `Bearer ${adminToken.token}`,
         "Content-Type": "application/json",
       },
       data: {},

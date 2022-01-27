@@ -1,6 +1,16 @@
-import React from "react";
+import React, { useEffect } from "react";
 import "./pagetitle.css";
+import { useNavigate } from "react-router-dom";
 const PageTitle = (props) => {
+  const adminToken = JSON.parse(localStorage.getItem("adminInfo"));
+
+  const navigate = useNavigate();
+  useEffect(() => {
+    console.log(adminToken);
+    if (!adminToken) {
+      navigate("/admin/login");
+    }
+  }, [navigate, adminToken]);
   const date = new Date();
 
   let greeting = "";
