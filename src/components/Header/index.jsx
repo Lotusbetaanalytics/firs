@@ -25,10 +25,10 @@ function Header() {
           ) : (
             <div className={styles.btnContainer}>
               {/* <Buttons text='Check In' /> */}
-              <Link to="/" className={styles.btn}>
+              <Link to="/admin/login" className={styles.btn}>
                 Staff Login
               </Link>
-              <Link to="/" className={styles.btn}>
+              <Link to="/admin/login" className={styles.btn}>
                 Admin Login
               </Link>
             </div>

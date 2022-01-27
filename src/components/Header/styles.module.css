@@ -55,6 +55,25 @@ ul li {
   border-radius: 5px;
 }
 
+.btn {
+  width: 300px;
+  height: 3rem;
+  padding-left: 4rem;
+  padding-top: 20px;
+  padding-right: 4rem;
+  padding-bottom: 1.5rem;
+  margin-left: 1rem;
+  border-radius: 10px;
+  text-align: center;
+  font-weight: bold;
+  color: aliceblue;
+  background-color: maroon;
+}
+
+.btn:hover {
+  color: aliceblue !important;
+  background: rgb(150, 3, 3) !important;
+}
 /* media */
 @media (max-width: 599px) {
   .navBtn {
