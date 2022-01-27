@@ -42,7 +42,8 @@ function TokenDetails() {
       setTimeOut(user.data.timeOut);
       setStatus(user.data.status);
     }
-  }, [navigate, user]);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [navigate]);
 
   // useEffect(() => {
   //   if (user.data.status === checkout) {
