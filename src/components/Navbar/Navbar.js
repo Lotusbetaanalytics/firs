@@ -1,5 +1,5 @@
 import React from "react";
-import { Link, Navigate, useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import logo from "../../assets/logo.png";
 import {
   AiFillAppstore,
@@ -20,8 +20,8 @@ const Navbar = () => {
 
   const logoutHandler = () => {
     dispatch(adminLogout());
-    navigate("/admin/login")
-  }
+    navigate("/admin/login");
+  };
   return (
     <div className="navbar__container">
       <div className="navbar__logo">
