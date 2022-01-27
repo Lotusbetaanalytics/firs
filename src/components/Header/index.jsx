@@ -27,8 +27,15 @@ function Header() {
               {/* <Buttons text='Check In' /> */}
               <Link to="/" className={styles.btn}>
                 Staff Login
+<<<<<<< HEAD
+              </div>
+            </Link>
+            <Link to="/admin/login">
+              <div className={`${styles.green} ${styles.navBtn}`}>
+=======
               </Link>
               <Link to="/" className={styles.btn}>
+>>>>>>> 4b595f0d3d6be9b002b878e594fa23cb4a8103cc
                 Admin Login
               </Link>
             </div>

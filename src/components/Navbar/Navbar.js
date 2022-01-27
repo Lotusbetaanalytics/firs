@@ -1,5 +1,5 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link, Navigate, useNavigate } from "react-router-dom";
 import logo from "../../assets/logo.png";
 import {
   AiFillAppstore,
@@ -11,8 +11,17 @@ import {
 } from "react-icons/ai";
 import { FaSignOutAlt } from "react-icons/fa";
 import "./Navbar.css";
+import { adminLogout } from "../../redux/actions_/adminActions";
+import { useDispatch } from "react-redux";
 
 const Navbar = () => {
+  const navigate = useNavigate();
+  const dispatch = useDispatch();
+
+  const logoutHandler = () => {
+    dispatch(adminLogout());
+    navigate("/admin/login")
+  }
   return (
     <div className="navbar__container">
       <div className="navbar__logo">
@@ -55,12 +64,12 @@ const Navbar = () => {
             <h3>Pre Book Guest</h3>
           </div>
         </Link>
-        <Link to="/admin/logout" className="links__logout">
+        <button onClick={logoutHandler} className="links__logout">
           <div className="link">
             <FaSignOutAlt />
             <h3>Logout</h3>
           </div>
-        </Link>
+        </button>
       </div>
     </div>
   );

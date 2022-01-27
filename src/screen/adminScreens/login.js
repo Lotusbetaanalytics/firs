@@ -95,7 +95,7 @@ const Login = () => {
                 )}
               </div>
               <div className={styles.text2}>
-                Don't Have an account? <Link to="/register"> Register </Link>
+                Don't Have an account? <Link to="/admin/register"> Register </Link>
               </div>
             </form>
           </div>
