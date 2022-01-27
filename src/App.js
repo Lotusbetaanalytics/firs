@@ -22,7 +22,7 @@ const App = () => {
         <Route path="/tokensuccess" element={<TokenSuccess />} />
         <Route path="/gettokeninfo" element={<TokenDetails />} />
         <Route exact path="/admin/dashboard" element={<Dashboard />} />
-        <Route path="/login" element={<Login />} />
+        <Route path="/admin/login" element={<Login />} />
         <Route path="/admin/register" element={<Register />} />
         <Route path="/admin/logs" element={<Log />} />
         <Route path="/adminForgot" element={<AdminForgot />} />

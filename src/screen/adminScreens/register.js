@@ -204,7 +204,7 @@ const Register = () => {
             </div>
             <div className={`${styles.inputContainer_} ${styles.center}`}>
               <div>
-                Have an account? <Link to="/login">Log in</Link>
+                Have an account? <Link to="/admin/login">Log in</Link>
               </div>
             </div>
           </form>
