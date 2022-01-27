@@ -88,7 +88,32 @@
   font-size: 14px;
   padding: 0 2%;
 }
+.container {
+  display: flex;
+  width: 100vw;
+  height: 96vh;
+}
 
+.dashboard__container {
+  display: flex;
+  flex-direction: column;
+  width: 80vw;
+  height: 100%;
+  margin-left: 210px;
+}
+
+.tableContainer {
+  display: flex;
+  width: 100vw;
+  height: 100%;
+}
+.table2 {
+  display: flex;
+  flex-direction: column;
+  width: 80vw;
+  height: 100%;
+  margin-left: 210px;
+}
 .border {
   border-radius: 25px;
 }

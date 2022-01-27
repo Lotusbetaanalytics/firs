@@ -5,10 +5,13 @@ import Navbar from "../../components/Navbar/Navbar";
 export const Log = () => {
   return (
     <>
-      <Navbar />
-      <div className={styles.customPadding_}>
-        <Tabletwo />
+     <div className={styles.tableContainer}>
+        <Navbar />
+        <div className={styles.table2}>
+            <Tabletwo />
+        </div>
       </div>
+        
     </>
   );
 };

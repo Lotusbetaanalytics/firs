@@ -37,7 +37,7 @@ const Navbar = () => {
             <h3>Logs</h3>
           </div>
         </Link>
-        <Link to="/admin/add-admin" className="links__add__admin">
+        <Link to="/admin/register" className="links__add__admin">
           <div className="link">
             <AiOutlineUserAdd />
             <h3>Add Admin</h3>
