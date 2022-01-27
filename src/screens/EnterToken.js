@@ -64,7 +64,7 @@ function EnterToken() {
           ) : (
             <form onSubmit={submitHandler}>
               <div className={styles.inputContainer}>
-                <label>Enter Token</label>
+                {/* <label>Enter Token</label> */}
                 <input
                   type="text"
                   onChange={(e) => setToken(e.target.value)}
@@ -73,7 +73,7 @@ function EnterToken() {
                 />
               </div>
               <button type="submit" className={styles.btn2}>
-                Submit Token
+                Proceed
               </button>
             </form>
           )}

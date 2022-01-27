@@ -1,16 +1,9 @@
-import React, { useEffect } from "react";
+import React from "react";
 import styles from "../styles.module.css";
 import successIcon3 from "../assets/successIcon3.png";
 import Header from "../components/Header";
-import { useNavigate } from "react-router-dom";
 
 function TokenSuccess() {
-  const navigate = useNavigate();
-  useEffect(() => {
-    setTimeout(() => {
-      navigate("/gettokeninfo");
-    }, 1000);
-  }, [navigate]);
   return (
     <div className={styles.app}>
       <Header />
