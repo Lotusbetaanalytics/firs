@@ -57,6 +57,10 @@
   background-color: rgb(141, 5, 5);
   color: aliceblue;
 }
+.btn:hover {
+  background-color: rgb(141, 5, 5) !important;
+  color: aliceblue !important;
+}
 
 .btnContainer {
   margin-top: 35px;
