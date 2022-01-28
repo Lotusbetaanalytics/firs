@@ -17,9 +17,9 @@ const PageTitle = (props) => {
 
   let greeting = "";
 
-  if (date.getHours() >= 12 || date.getHours() === 16) {
+  if (date.getHours() === 12 || date.getHours() <= 16) {
     greeting = "Good Afternoon!";
-  } else if (date.getHours() >= 17 || date.getHours() === 22) {
+  } else if (date.getHours() === 17 || date.getHours() <= 22) {
     greeting = "Good Evening!";
   } else {
     greeting = "Good Morning!";

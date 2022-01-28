@@ -103,8 +103,9 @@ export const loginAdmin = (email, password) => async (dispatch) => {
 };
 
 export const adminLogout = (navigate) => (dispatch) => {
-  localStorage.removeItem("adminInfo");
-  // navigate("/admin/login");
+  // localStorage.removeItem("adminInfo");
+  localStorage.clear();
+  navigate("/admin/login");
   dispatch({
     type: ADMIN_LOGOUT,
   });

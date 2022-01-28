@@ -8,10 +8,14 @@ const userInfoFromStorage = localStorage.getItem("adminInfo")
 const userTokenInfoFromStorage = localStorage.getItem("getToken")
   ? JSON.parse(localStorage.getItem("getToken"))
   : null;
+const dashboardData = localStorage.getItem("dashboard")
+  ? JSON.parse(localStorage.getItem("dashboard"))
+  : null;
 
 const initialState = {
   adminLogin: { adminInfo: userInfoFromStorage },
   tokenUser: { getToken: userTokenInfoFromStorage },
+  dashboard: { dashboard: dashboardData },
 };
 
 const store = configureStore({ reducer: rootReducer }, initialState);

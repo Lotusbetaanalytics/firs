@@ -152,7 +152,7 @@ const Prebook = () => {
           <div className="date__time">
             <label htmlFor="date">Expected Date</label>
             <TextField
-              type="date"
+              type="date-local"
               id="date"
               variant="outlined"
               value={date}
@@ -165,7 +165,7 @@ const Prebook = () => {
             <TextField
               variant="outlined"
               id="time"
-              type="time"
+              type="datetime-local"
               value={time}
               onChange={(event) => handleChange(event, setTime)}
             />
