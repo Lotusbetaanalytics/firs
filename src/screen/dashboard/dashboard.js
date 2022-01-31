@@ -17,6 +17,7 @@ import {
 import "./dashboard.css";
 import { getDashboard } from "../../redux/actions/dashboardActions/dashboard.actions";
 import { useSelector } from "react-redux";
+
 const Dashboard = () => {
   const [visitorsToday, setVisitorsToday] = useState(null);
   const [allStaff, setAllStaff] = useState(null);
@@ -30,7 +31,7 @@ const Dashboard = () => {
 
   // eslint-disable-next-line no-unused-vars
   const state = useSelector((state) => {
-    return state;
+    return state.dashboard;
   });
 
   const dispatch = useDispatch();
