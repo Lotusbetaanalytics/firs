@@ -4,17 +4,19 @@ import { useDispatch, useSelector } from "react-redux";
 import { logAction } from "../../redux/actions_/logActions";
 
 export const Tabletwo = () => {
+  const [tableData, setTableData] = useState("");
   const dispatch = useDispatch();
 
   useEffect(() => {
     dispatch(logAction());
+    setTableData(data)
+
   }, [dispatch]);
 
   const getlog = useSelector((state) => state.getlog);
   const { data } = getlog;
 
-  console.log(data);
-
+  
   return (
     <div>
       <div style={{ maxWidth: "100%" }}>
@@ -71,7 +73,7 @@ export const Tabletwo = () => {
               field: "status",
             },
           ]}
-          data={data}
+          data={tableData}
           title="Visitors Log"
           options={{
             exportButton: true,

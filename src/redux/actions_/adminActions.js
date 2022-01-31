@@ -102,7 +102,7 @@ export const loginAdmin = (email, password) => async (dispatch) => {
   }
 };
 
-export const adminLogout = (navigate) => (dispatch) => {
+export const adminLogout = () => (dispatch) => {
   localStorage.removeItem("adminInfo");
   // navigate("/admin/login");
   dispatch({
@@ -134,7 +134,7 @@ export const adminDetails = () => async (dispatch, getState) => {
       type: ADMIN_DETAILS_FAIL,
       payload:
         error.response && error.response.data.message
-          ? error.response.data.error
+          ? error.response.data.message
           : error.message,
     });
   }
@@ -164,7 +164,7 @@ export const adminForgetpassword = (email) => async (dispatch) => {
       type: ADMIN_FORGET_PASSWORD_FAIL,
       payload:
         error.response && error.response.data.message
-          ? error.response.data.error
+          ? error.response.data.message
           : error.message,
     });
   }
