@@ -4,16 +4,13 @@ import { LOG_FAIL, LOG_REQUEST, LOG_SUCCESS } from "../constants_/logConstants";
 export const logAction = () => async (dispatch, getState) => {
   try {
     dispatch({ type: LOG_REQUEST });
-    const {
-      adminLogin: { adminInfo },
-    } = getState();
 
-    // const adminToken = JSON.parse(localStorage.getItem("adminInfo"));
+    const adminToken = JSON.parse(localStorage.getItem("adminInfo"));
 
     const config = {
       headers: {
         "Content-Type": "application/json",
-        Authorization: `Bearer ${adminInfo.token}`,
+        Authorization: `Bearer ${adminToken.token}`,
       },
     };
 
@@ -22,7 +19,6 @@ export const logAction = () => async (dispatch, getState) => {
       type: LOG_SUCCESS,
       payload: data,
     });
-    console.log(data);
   } catch (error) {
     dispatch({
       type: LOG_FAIL,

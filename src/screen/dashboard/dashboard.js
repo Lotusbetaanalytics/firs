@@ -27,29 +27,27 @@ const Dashboard = () => {
   const [checkedOut, setCheckedOut] = useState(null);
   const [pendingVisitors, setPendingVisitors] = useState(null);
 
-  const dashboardData = JSON.parse(localStorage.getItem("dashboard"));
-
-  // eslint-disable-next-line no-unused-vars
-  const state = useSelector((state) => {
+  const { data, success } = useSelector((state) => {
     return state.dashboard;
   });
 
   const dispatch = useDispatch();
 
   useEffect(() => {
-    if (!dashboardData) {
-      dispatch(getDashboard());
-    } else {
-      setVisitorsToday(dashboardData.data.todaysPrebooks.length);
-      setPreBookedGuests(dashboardData.data.allPrebooks.length);
-      setAllStaff(dashboardData.data.allStaff.length);
-      setAllAdmin(dashboardData.data.allAdmin.length);
-      setCheckedIn(dashboardData.data.todaysCheckedInPrebooks.length);
-      setCheckedOut(dashboardData.data.todaysCheckedOutPrebooks.length);
-      setPendingVisitors(dashboardData.data.todaysPendingPrebooks.length);
+    if (success) {
+      setVisitorsToday(data.data.todaysPrebooks.length);
+      setPreBookedGuests(data.data.allPrebooks.length);
+      setAllStaff(data.data.allStaff.length);
+      setAllAdmin(data.data.allAdmin.length);
+      setCheckedIn(data.data.todaysCheckedInPrebooks.length);
+      setCheckedOut(data.data.todaysCheckedOutPrebooks.length);
+      setPendingVisitors(data.data.todaysPendingPrebooks.length);
     }
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [dashboardData, dispatch]);
+  }, [success, data]);
+
+  useEffect(() => {
+    dispatch(getDashboard());
+  }, [dispatch]);
   return (
     <div className="container">
       <div>

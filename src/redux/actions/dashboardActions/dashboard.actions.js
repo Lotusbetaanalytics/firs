@@ -22,7 +22,6 @@ export const getDashboard = () => {
         }
       );
 
-      localStorage.setItem("dashboard", JSON.stringify(res.data));
       dispatch({
         type: GET_DASHBOARD_SUCCESS,
         payload: res.data,

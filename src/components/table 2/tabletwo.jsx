@@ -13,8 +13,6 @@ export const Tabletwo = () => {
   const getlog = useSelector((state) => state.getlog);
   const { data } = getlog;
 
-  console.log(data);
-
   return (
     <div>
       <div style={{ maxWidth: "100%" }}>
