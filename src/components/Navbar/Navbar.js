@@ -19,7 +19,8 @@ const Navbar = () => {
   const dispatch = useDispatch();
 
   const logoutHandler = () => {
-    dispatch(adminLogout(navigate));
+    dispatch(adminLogout());
+    navigate("/admin/login");
   };
   return (
     <div className="navbar__container">

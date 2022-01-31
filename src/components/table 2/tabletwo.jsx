@@ -6,12 +6,12 @@ import { logAction } from "../../redux/actions_/logActions";
 export const Tabletwo = () => {
   const dispatch = useDispatch();
 
+  const getlog = useSelector((state) => state.getlog);
+  const { data } = getlog;
+
   useEffect(() => {
     dispatch(logAction());
   }, [dispatch]);
-
-  const getlog = useSelector((state) => state.getlog);
-  const { data } = getlog;
 
   return (
     <div>

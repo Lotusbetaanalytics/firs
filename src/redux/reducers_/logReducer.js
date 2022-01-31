@@ -1,9 +1,9 @@
 import { LOG_FAIL, LOG_REQUEST, LOG_SUCCESS } from "../constants_/logConstants";
 
-export const logReducer = (state = {}, action) => {
+export const logReducer = (state = [], action) => {
     switch (action.type) {
       case LOG_REQUEST:
-        return {state, loading: true };
+        return {...state, loading: true };
       case LOG_SUCCESS:
         return { loading: false, success: true, data: action.payload.data.allPrebooks };
       case LOG_FAIL:
