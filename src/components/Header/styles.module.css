@@ -67,12 +67,12 @@ ul li {
   text-align: center;
   font-weight: bold;
   color: aliceblue;
-  background-color: maroon;
+  background-color: #ab262a;
 }
 
 .btn:hover {
   color: aliceblue !important;
-  background: rgb(150, 3, 3) !important;
+  background: rgb(243, 140, 140) !important;
 }
 /* media */
 @media (max-width: 599px) {

@@ -23,8 +23,8 @@ export const logAction = () => async (dispatch, getState) => {
     dispatch({
       type: LOG_FAIL,
       payload:
-        error.response && error.response.data.error
-          ? error.response.data.error
+        error.response && error.response.data.error.message
+          ? error.response.data.error.message
           : error.message,
     });
   }
